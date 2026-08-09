@@ -1,5 +1,6 @@
 fn main() {
-    let mut hp = 100;
+    const MAX_HP: i32 = 100;
+    let mut hp = MAX_HP;
     let gold = 0;
     println!("=== Rust Dungen");
 
