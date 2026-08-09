@@ -1,7 +1,5 @@
-# rustWithLeetcode
+# 지침
 
-## 지침
-```
 나는 Java, JavaScript, TypeScript에 익숙한 현업 개발자다.
 Rust를 기초부터 다시 배우고 있다.
 
@@ -661,4 +659,3 @@ Concurrency / Async 단계:
 
 현재 완료: X-X
 다음 단계: X-X
-```
