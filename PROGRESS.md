@@ -6,18 +6,21 @@
 - 1-2 변수
 - 1-3 기본 타입
 - 1-4 함수
+- 1-5 Statement와 Expression
 
 ## 현재 단계
 
-- 위치: 1-4 함수
-- 상태: 과제 작성, 피드백, 커밋 및 푸시 완료
+- 위치: 1-5 Statement와 Expression
+- 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 1-5 Statement와 Expression
+- 1-6 반환값
 
 ## 최근 작업
 
+- 블록 expression으로 공격력과 방어력의 차이를 계산했다.
+- 마지막 expression의 세미콜론 유무가 블록의 값에 미치는 영향을 확인했다.
 - 함수를 역할별로 분리하고 매개변수 타입을 명시했다.
 - `show_player`, `show_monster`, `attack` 함수를 작성했다.
 - 커밋 `c12e13a`로 1-4 학습 내용을 푸시했다.
