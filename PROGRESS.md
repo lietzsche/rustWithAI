@@ -33,18 +33,23 @@
 - 6-1 Reference
 - 6-2 Borrowing
 - 6-3 Mutable Reference
+- 6-4 Mutable Reference 규칙
 
 ## 현재 단계
 
-- 위치: 6-3 Mutable Reference
+- 위치: 6-4 Mutable Reference 규칙
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 6-4 Mutable Reference 규칙
+- 6-5 Slice
 
 ## 최근 작업
 
+- 같은 값에 활성 mutable reference를 두 개 만들어 `E0499` 오류를 경험했다.
+- 첫 mutable borrow의 마지막 사용 이후 두 번째 borrow를 시작해 충돌을 해결했다.
+- reference의 유효한 borrow 범위가 마지막 사용 시점에 따라 결정되는 것을 확인했다.
+- 6-4 Mutable Reference 규칙 학습을 시작했다.
 - mutable 변수에서 `&mut String` reference를 생성해 함수에 전달했다.
 - 함수가 소유권 대신 변경 권한만 빌려 문자열을 수정했다.
 - mutable borrow 종료 후 소유자가 변경된 원본을 다시 사용했다.
