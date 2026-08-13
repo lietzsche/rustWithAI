@@ -17,18 +17,22 @@
 - 3-1 Array
 - 3-2 Tuple
 - 3-3 `Vec<T>`
+- 3-4 `usize`
 
 ## 현재 단계
 
-- 위치: 3-3 `Vec<T>`
+- 위치: 3-4 `usize`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 3-4 `usize`
+- 3-5 컬렉션 반복
 
 ## 최근 작업
 
+- `i32`로 Vec를 indexing해 `E0277` 컴파일 오류를 경험했다.
+- index와 컬렉션 길이에 사용되는 `usize` 타입으로 오류를 수정했다.
+- `vec!`와 `println!`의 `!`가 macro 호출 표시임을 확인했다.
 - 빈 `Vec<&str>`를 만들고 `push`로 inventory를 구성했다.
 - `len`, indexing, `pop`으로 Vec의 원소를 확인하고 제거했다.
 - 서로 다른 타입의 플레이어와 몬스터 데이터를 tuple로 묶었다.
