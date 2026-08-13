@@ -31,18 +31,23 @@
 - 5-5 함수 호출과 Ownership
 - 5-6 반환값과 Ownership
 - 6-1 Reference
+- 6-2 Borrowing
 
 ## 현재 단계
 
-- 위치: 6-1 Reference
+- 위치: 6-2 Borrowing
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 6-2 Borrowing
+- 6-3 Mutable Reference
 
 ## 최근 작업
 
+- immutable reference를 통해 원본을 borrowing하고 읽기 작업을 수행했다.
+- `&String`으로 문자열을 변경하려 해 `E0596` 오류를 경험했다.
+- borrow가 끝난 뒤 소유자가 원본을 계속 사용할 수 있음을 확인했다.
+- 6-2 Borrowing 학습을 시작했다.
 - `&String` reference를 함수에 전달해 원본의 소유권을 유지했다.
 - reference는 원본을 소유하지 않으며 함수 호출 후에도 소유자가 원본을 사용할 수 있음을 확인했다.
 - 6-1 Reference 학습을 시작했다.
