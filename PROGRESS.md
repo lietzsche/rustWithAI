@@ -25,18 +25,22 @@
 - 4-4 `String`과 `&str` 관계
 - 4-5 문자열 처리
 - 5-1 Stack과 Heap
+- 5-2 Ownership 기본 규칙
 
 ## 현재 단계
 
-- 위치: 5-1 Stack과 Heap
+- 위치: 5-2 Ownership 기본 규칙
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 5-2 Ownership 기본 규칙
+- 5-3 Move
 
 ## 최근 작업
 
+- `temporary_item`이 `String` 값의 소유자임을 확인했다.
+- 소유자의 scope가 끝날 때 Heap 데이터가 정리되는 시점을 확인했다.
+- 5-2 Ownership 기본 규칙 학습을 시작했다.
 - 고정 크기 값과 배열이 Stack에 저장되는 구조를 구분했다.
 - `String`의 관리 정보와 실제 문자열 데이터가 각각 Stack과 Heap에 저장되는 구조를 확인했다.
 - `Vec<&str>`의 관리 정보, Heap 버퍼, 문자열 리터럴의 저장 영역을 구분했다.
