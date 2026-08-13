@@ -16,18 +16,21 @@
 - 2-6 반복 제어
 - 3-1 Array
 - 3-2 Tuple
+- 3-3 `Vec<T>`
 
 ## 현재 단계
 
-- 위치: 3-2 Tuple
+- 위치: 3-3 `Vec<T>`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 3-3 `Vec<T>`
+- 3-4 `usize`
 
 ## 최근 작업
 
+- 빈 `Vec<&str>`를 만들고 `push`로 inventory를 구성했다.
+- `len`, indexing, `pop`으로 Vec의 원소를 확인하고 제거했다.
 - 서로 다른 타입의 플레이어와 몬스터 데이터를 tuple로 묶었다.
 - tuple index 접근과 destructuring으로 각 값을 사용했다.
 - `[i32; 3]`으로 원소 타입과 길이가 고정된 배열을 선언했다.
