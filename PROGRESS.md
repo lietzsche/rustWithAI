@@ -32,18 +32,23 @@
 - 5-6 반환값과 Ownership
 - 6-1 Reference
 - 6-2 Borrowing
+- 6-3 Mutable Reference
 
 ## 현재 단계
 
-- 위치: 6-2 Borrowing
+- 위치: 6-3 Mutable Reference
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 6-3 Mutable Reference
+- 6-4 Mutable Reference 규칙
 
 ## 최근 작업
 
+- mutable 변수에서 `&mut String` reference를 생성해 함수에 전달했다.
+- 함수가 소유권 대신 변경 권한만 빌려 문자열을 수정했다.
+- mutable borrow 종료 후 소유자가 변경된 원본을 다시 사용했다.
+- 6-3 Mutable Reference 학습을 시작했다.
 - immutable reference를 통해 원본을 borrowing하고 읽기 작업을 수행했다.
 - `&String`으로 문자열을 변경하려 해 `E0596` 오류를 경험했다.
 - borrow가 끝난 뒤 소유자가 원본을 계속 사용할 수 있음을 확인했다.
