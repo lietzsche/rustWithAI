@@ -34,18 +34,22 @@
 - 6-2 Borrowing
 - 6-3 Mutable Reference
 - 6-4 Mutable Reference 규칙
+- 6-5 Slice
 
 ## 현재 단계
 
-- 위치: 6-4 Mutable Reference 규칙
+- 위치: 6-5 Slice
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 6-5 Slice
+- 6-6 Ownership / Borrowing 종합 실습
 
 ## 최근 작업
 
+- 배열의 연속 구간을 `&[i32]` slice로 빌려 순회했다.
+- `String`의 UTF-8 byte 구간을 `&str` slice로 빌렸다.
+- slice 사용 후에도 원본 배열과 문자열의 소유권이 유지됨을 확인했다.
 - 같은 값에 활성 mutable reference를 두 개 만들어 `E0499` 오류를 경험했다.
 - 첫 mutable borrow의 마지막 사용 이후 두 번째 borrow를 시작해 충돌을 해결했다.
 - reference의 유효한 borrow 범위가 마지막 사용 시점에 따라 결정되는 것을 확인했다.
