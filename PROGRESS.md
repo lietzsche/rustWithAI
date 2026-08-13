@@ -30,18 +30,22 @@
 - 5-4 Copy와 Clone
 - 5-5 함수 호출과 Ownership
 - 5-6 반환값과 Ownership
+- 6-1 Reference
 
 ## 현재 단계
 
-- 위치: 5-6 반환값과 Ownership
+- 위치: 6-1 Reference
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 6-1 Reference
+- 6-2 Borrowing
 
 ## 최근 작업
 
+- `&String` reference를 함수에 전달해 원본의 소유권을 유지했다.
+- reference는 원본을 소유하지 않으며 함수 호출 후에도 소유자가 원본을 사용할 수 있음을 확인했다.
+- 6-1 Reference 학습을 시작했다.
 - 함수 내부에서 생성한 `String`을 반환해 호출한 쪽으로 소유권을 전달했다.
 - 반환 타입을 생략해 `()`와 `String`이 충돌하는 `E0308` 오류를 경험했다.
 - 마지막 expression으로 값을 반환하고 `quest_reward`가 새 소유자가 되는 흐름을 확인했다.
