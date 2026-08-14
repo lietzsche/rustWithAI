@@ -35,18 +35,23 @@
 - 6-3 Mutable Reference
 - 6-4 Mutable Reference 규칙
 - 6-5 Slice
+- 6-6 Ownership / Borrowing 종합 실습
 
 ## 현재 단계
 
-- 위치: 6-5 Slice
+- 위치: 6-6 Ownership / Borrowing 종합 실습
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 6-6 Ownership / Borrowing 종합 실습
+- 7-1 Struct 정의
 
 ## 최근 작업
 
+- `Vec<String>`을 immutable slice로 읽고 `&mut Vec<String>`으로 변경했다.
+- 활성 immutable borrow 중 mutable borrow를 시도해 `E0502` 오류를 경험했다.
+- slice의 마지막 사용 이후 Vec를 변경하도록 순서를 조정해 borrow 충돌을 해결했다.
+- 소유 `String`을 함수에 전달하고 Vec가 새 소유자가 되는 흐름을 적용했다.
 - 배열의 연속 구간을 `&[i32]` slice로 빌려 순회했다.
 - `String`의 UTF-8 byte 구간을 `&str` slice로 빌렸다.
 - slice 사용 후에도 원본 배열과 문자열의 소유권이 유지됨을 확인했다.
