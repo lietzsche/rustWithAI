@@ -38,18 +38,22 @@
 - 6-6 Ownership / Borrowing 종합 실습
 - 7-1 Struct 정의
 - 7-2 Struct 생성과 field
+- 7-3 Method
 
 ## 현재 단계
 
-- 위치: 7-2 Struct 생성과 field
+- 위치: 7-3 Method
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 7-3 Method
+- 7-4 `impl`
 
 ## 최근 작업
 
+- `Player`에 `&self`를 받는 `show_status` method를 정의했다.
+- 자유 함수 호출을 `player.show_status()` method 호출로 교체했다.
+- immutable receiver를 사용한 뒤에도 Player instance를 계속 사용했다.
 - `Player`, `Monster`, `Item` struct instance를 생성했다.
 - tuple 위치 접근을 의미 있는 struct field 접근으로 교체했다.
 - `String` field를 reference로 함수에 전달해 소유권을 유지했다.
