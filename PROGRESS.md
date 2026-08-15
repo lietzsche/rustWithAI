@@ -39,18 +39,23 @@
 - 7-1 Struct 정의
 - 7-2 Struct 생성과 field
 - 7-3 Method
+- 7-4 `impl`
 
 ## 현재 단계
 
-- 위치: 7-3 Method
+- 위치: 7-4 `impl`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 7-4 `impl`
+- 7-5 Associated Function
 
 ## 최근 작업
 
+- `impl Player`에 여러 method를 정의했다.
+- `take_damage`에서 `&mut self`로 Player의 HP를 변경하고 최솟값을 0으로 제한했다.
+- `is_alive`에서 `&self`로 상태를 읽어 `bool`을 반환했다.
+- 7-4 `impl` 학습을 시작했다.
 - `Player`에 `&self`를 받는 `show_status` method를 정의했다.
 - 자유 함수 호출을 `player.show_status()` method 호출로 교체했다.
 - immutable receiver를 사용한 뒤에도 Player instance를 계속 사용했다.
