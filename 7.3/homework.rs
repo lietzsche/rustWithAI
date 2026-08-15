@@ -6,9 +6,9 @@ struct Player {
 
 impl Player {
     fn show_status(&self) {
-        println!("name: {}", &self.name);
-        println!("hp: {}", &self.hp);
-        println!("gold: {}", &self.gold);
+        println!("name: {}", self.name);
+        println!("hp: {}", self.hp);
+        println!("gold: {}", self.gold);
     }
 }
 
