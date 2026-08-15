@@ -36,18 +36,22 @@
 - 6-4 Mutable Reference 규칙
 - 6-5 Slice
 - 6-6 Ownership / Borrowing 종합 실습
+- 7-1 Struct 정의
 
 ## 현재 단계
 
-- 위치: 6-6 Ownership / Borrowing 종합 실습
+- 위치: 7-1 Struct 정의
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 7-1 Struct 정의
+- 7-2 Struct 생성과 field
 
 ## 최근 작업
 
+- `Player`, `Monster`, `Item` struct와 이름 있는 field를 정의했다.
+- instance가 없는 struct에 발생하는 `dead_code` 경고를 확인했다.
+- 마지막 field의 trailing comma 관례를 적용했다.
 - `Vec<String>`을 immutable slice로 읽고 `&mut Vec<String>`으로 변경했다.
 - 활성 immutable borrow 중 mutable borrow를 시도해 `E0502` 오류를 경험했다.
 - slice의 마지막 사용 이후 Vec를 변경하도록 순서를 조정해 borrow 충돌을 해결했다.
