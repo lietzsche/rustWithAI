@@ -45,18 +45,24 @@
 - 8-1 Enum
 - 8-2 Enum에 데이터 넣기
 - 8-3 `match`
+- 8-4 `if let`
+- 8-5 Pattern과 destructuring 기초
+- 9-1 `Option<T>`
 
 ## 현재 단계
 
-- 위치: 8-5 Pattern과 destructuring 기초
+- 위치: 9-1 `Option<T>`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 9-1 `Option<T>`
+- 9-2 `Some` / `None`
 
 ## 최근 작업
 
+- `String` 변수에 `None`을 대입해 `E0308` 타입 불일치를 경험했다.
+- 값이 없을 수 있는 타입을 `Option<String>`으로 명시해 오류를 해결했다.
+- `{:?}` debug formatting으로 `None` variant를 확인했다.
 - `BattleRecord`의 named field 구조를 struct pattern으로 destructuring했다.
 - `&BattleRecord`를 destructuring해 `turn`, `damage`, `critical`을 reference로 빌려 읽었다.
 - destructuring 이후에도 원본 `BattleRecord`의 소유권이 유지됨을 확인했다.
