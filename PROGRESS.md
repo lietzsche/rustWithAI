@@ -48,18 +48,22 @@
 - 8-4 `if let`
 - 8-5 Pattern과 destructuring 기초
 - 9-1 `Option<T>`
+- 9-2 `Some` / `None`
 
 ## 현재 단계
 
-- 위치: 9-1 `Option<T>`
+- 위치: 9-2 `Some` / `None`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 9-2 `Some` / `None`
+- 9-3 `Result<T, E>`
 
 ## 최근 작업
 
+- `Some(String)`과 `None`으로 `Option<String>`의 두 상태를 생성했다.
+- `&Option<String>`을 `match`해 내부 값을 소유권 이동 없이 읽었다.
+- 함수 호출 후 원래 `Some` 값을 다시 사용해 borrowing을 확인했다.
 - `String` 변수에 `None`을 대입해 `E0308` 타입 불일치를 경험했다.
 - 값이 없을 수 있는 타입을 `Option<String>`으로 명시해 오류를 해결했다.
 - `{:?}` debug formatting으로 `None` variant를 확인했다.
