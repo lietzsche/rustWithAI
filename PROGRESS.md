@@ -48,15 +48,20 @@
 
 ## 현재 단계
 
-- 위치: 8-3 `match`
+- 위치: 8-4 `if let`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 8-4 `if let`
+- 8-5 Pattern과 destructuring 기초
 
 ## 최근 작업
 
+- `if let Action::Attack(amount) = action`으로 `Attack` variant만 선택해 내부 공격력을 추출했다.
+- `Rest`와 `Exit`를 별도 처리하지 않고 무시하는 `if let`의 용도를 확인했다.
+- `&Action`을 검사해 원본 배열의 소유권을 유지했다.
+- pattern과 value의 위치를 반대로 작성해 variant 생성자 함수가 바인딩되면서 발생한 `E0277` 오류를 이해하고 수정했다.
+- 8-4 `if let` 학습을 시작했다.
 - `match`의 arm으로 모든 `Action` variant를 빠짐없이 처리했다.
 - tuple-like 및 struct-like pattern으로 피해량과 회복량을 꺼냈다.
 - `&Action`을 reference 기반으로 반복해 배열의 소유권을 유지했다.
