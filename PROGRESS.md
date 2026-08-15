@@ -40,18 +40,23 @@
 - 7-2 Struct 생성과 field
 - 7-3 Method
 - 7-4 `impl`
+- 7-5 Associated Function
 
 ## 현재 단계
 
-- 위치: 7-4 `impl`
+- 위치: 7-5 Associated Function
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 7-5 Associated Function
+- 7-6 여러 Struct를 이용한 모델링
 
 ## 최근 작업
 
+- `Player::new` associated function으로 Player instance를 생성했다.
+- `self`가 없는 함수는 instance가 아니라 타입 이름으로 호출함을 확인했다.
+- Player의 초기 HP와 Gold를 생성 함수에 모아 일관된 초기화 규칙을 만들었다.
+- 7-5 Associated Function 학습을 시작했다.
 - `impl Player`에 여러 method를 정의했다.
 - `take_damage`에서 `&mut self`로 Player의 HP를 변경하고 최솟값을 0으로 제한했다.
 - `is_alive`에서 `&self`로 상태를 읽어 `bool`을 반환했다.
