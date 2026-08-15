@@ -41,18 +41,23 @@
 - 7-3 Method
 - 7-4 `impl`
 - 7-5 Associated Function
+- 7-6 여러 Struct를 이용한 모델링
 
 ## 현재 단계
 
-- 위치: 7-5 Associated Function
+- 위치: 7-6 여러 Struct를 이용한 모델링
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 7-6 여러 Struct를 이용한 모델링
+- 8-1 Enum
 
 ## 최근 작업
 
+- `Reward`가 `Item`을 field로 소유하는 포함 관계를 모델링했다.
+- `Reward::show(&self)`로 중첩된 Item과 Gold를 소유권 이동 없이 읽었다.
+- 보상 Gold를 Player에 반영해 여러 struct가 함께 동작하도록 구성했다.
+- 7-6 여러 Struct를 이용한 모델링 학습을 시작했다.
 - `Player::new` associated function으로 Player instance를 생성했다.
 - `self`가 없는 함수는 instance가 아니라 타입 이름으로 호출함을 확인했다.
 - Player의 초기 HP와 Gold를 생성 함수에 모아 일관된 초기화 규칙을 만들었다.
