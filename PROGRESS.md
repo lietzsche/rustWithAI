@@ -48,15 +48,19 @@
 
 ## 현재 단계
 
-- 위치: 8-4 `if let`
+- 위치: 8-5 Pattern과 destructuring 기초
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 8-5 Pattern과 destructuring 기초
+- 9-1 `Option<T>`
 
 ## 최근 작업
 
+- `BattleRecord`의 named field 구조를 struct pattern으로 destructuring했다.
+- `&BattleRecord`를 destructuring해 `turn`, `damage`, `critical`을 reference로 빌려 읽었다.
+- destructuring 이후에도 원본 `BattleRecord`의 소유권이 유지됨을 확인했다.
+- 8-5 Pattern과 destructuring 기초 학습을 시작했다.
 - `if let Action::Attack(amount) = action`으로 `Attack` variant만 선택해 내부 공격력을 추출했다.
 - `Rest`와 `Exit`를 별도 처리하지 않고 무시하는 `if let`의 용도를 확인했다.
 - `&Action`을 검사해 원본 배열의 소유권을 유지했다.
