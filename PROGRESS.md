@@ -42,18 +42,23 @@
 - 7-4 `impl`
 - 7-5 Associated Function
 - 7-6 여러 Struct를 이용한 모델링
+- 8-1 Enum
 
 ## 현재 단계
 
-- 위치: 7-6 여러 Struct를 이용한 모델링
+- 위치: 8-1 Enum
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 8-1 Enum
+- 8-2 Enum에 데이터 넣기
 
 ## 최근 작업
 
+- `Action` enum과 `Attack`, `Rest`, `Exit` variant를 정의했다.
+- 서로 다른 variant가 같은 `Action` 타입으로 배열에 저장되는 것을 확인했다.
+- enum variant와 배열의 `usize` index가 별개임을 컴파일 오류로 확인했다.
+- 8-1 Enum 학습을 시작했다.
 - `Reward`가 `Item`을 field로 소유하는 포함 관계를 모델링했다.
 - `Reward::show(&self)`로 중첩된 Item과 Gold를 소유권 이동 없이 읽었다.
 - 보상 Gold를 Player에 반영해 여러 struct가 함께 동작하도록 구성했다.
