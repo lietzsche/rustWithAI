@@ -44,18 +44,23 @@
 - 7-6 여러 Struct를 이용한 모델링
 - 8-1 Enum
 - 8-2 Enum에 데이터 넣기
+- 8-3 `match`
 
 ## 현재 단계
 
-- 위치: 8-2 Enum에 데이터 넣기
+- 위치: 8-3 `match`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 8-3 `match`
+- 8-4 `if let`
 
 ## 최근 작업
 
+- `match`의 arm으로 모든 `Action` variant를 빠짐없이 처리했다.
+- tuple-like 및 struct-like pattern으로 피해량과 회복량을 꺼냈다.
+- `&Action`을 reference 기반으로 반복해 배열의 소유권을 유지했다.
+- 8-3 `match` 학습을 시작했다.
 - `Attack(i32)` tuple-like variant에 피해량을 저장했다.
 - `Rest { recovered_hp: i32 }` struct-like variant와 데이터 없는 `Exit` unit-like variant를 정의했다.
 - enum payload를 아직 읽지 않아 발생하는 `dead_code` warning을 확인했다.
