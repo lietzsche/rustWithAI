@@ -37,18 +37,23 @@
 - 6-5 Slice
 - 6-6 Ownership / Borrowing 종합 실습
 - 7-1 Struct 정의
+- 7-2 Struct 생성과 field
 
 ## 현재 단계
 
-- 위치: 7-1 Struct 정의
+- 위치: 7-2 Struct 생성과 field
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 7-2 Struct 생성과 field
+- 7-3 Method
 
 ## 최근 작업
 
+- `Player`, `Monster`, `Item` struct instance를 생성했다.
+- tuple 위치 접근을 의미 있는 struct field 접근으로 교체했다.
+- `String` field를 reference로 함수에 전달해 소유권을 유지했다.
+- 가변 `Player` instance의 `name` field를 변경했다.
 - `Player`, `Monster`, `Item` struct와 이름 있는 field를 정의했다.
 - instance가 없는 struct에 발생하는 `dead_code` 경고를 확인했다.
 - 마지막 field의 trailing comma 관례를 적용했다.
