@@ -43,18 +43,23 @@
 - 7-5 Associated Function
 - 7-6 여러 Struct를 이용한 모델링
 - 8-1 Enum
+- 8-2 Enum에 데이터 넣기
 
 ## 현재 단계
 
-- 위치: 8-1 Enum
+- 위치: 8-2 Enum에 데이터 넣기
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 8-2 Enum에 데이터 넣기
+- 8-3 `match`
 
 ## 최근 작업
 
+- `Attack(i32)` tuple-like variant에 피해량을 저장했다.
+- `Rest { recovered_hp: i32 }` struct-like variant와 데이터 없는 `Exit` unit-like variant를 정의했다.
+- enum payload를 아직 읽지 않아 발생하는 `dead_code` warning을 확인했다.
+- 8-2 Enum에 데이터 넣기 학습을 시작했다.
 - `Action` enum과 `Attack`, `Rest`, `Exit` variant를 정의했다.
 - 서로 다른 variant가 같은 `Action` 타입으로 배열에 저장되는 것을 확인했다.
 - enum variant와 배열의 `usize` index가 별개임을 컴파일 오류로 확인했다.
