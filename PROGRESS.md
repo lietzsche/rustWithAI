@@ -89,18 +89,24 @@
 - 14-8 여러 파일로 코드 분리
 - 14-9 기본 개발 도구
 - 14-10 `cargo test`와 최소 Unit Test
+- 14-11 Workspace 기초
 
 ## 현재 단계
 
-- 위치: 14-10 `cargo test`와 최소 Unit Test
+- 위치: 14-11 Workspace 기초
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 14-11 Workspace 기초
+- 14-12 기존 RPG의 Cargo 프로젝트 전환
 
 ## 최근 작업
 
+- 저장소 루트에 `[workspace]`, `members = ["14.1"]`, `resolver = "3"`을 가진 virtual workspace manifest를 구성했다.
+- TOML table 설명을 값으로 입력한 parser 오류와 `member`/`members` 키 불일치를 수정했다.
+- workspace root에서 member 전체의 check와 test를 실행하고 Cargo metadata의 `workspace_root`와 member 정보를 확인했다.
+- workspace가 루트 `Cargo.lock`과 `target/`을 공유하도록 기존 `14.1`의 중복 lockfile과 build artifact를 정리했다.
+- 14-11 Workspace 기초 학습을 시작했다.
 - 순수 함수 `calculate_damage`를 추가해 공격력과 방어력에 따른 피해량을 결정적으로 계산했다.
 - `#[cfg(test)]`, `#[test]`, `assert_eq!`로 `battle` module 안에 unit test를 구성했다.
 - 잘못된 기대값으로 test를 실패시켜 test 경로, panic 위치, `left` 실제값과 `right` 기대값을 확인했다.
