@@ -76,18 +76,23 @@
 - 12-6 여러 Trait 조합
 - 13-1 Lifetime이 필요한 이유
 - 13-2 Lifetime annotation
+- 13-3 함수와 Lifetime
 
 ## 현재 단계
 
-- 위치: 13-2 Lifetime annotation
+- 위치: 13-3 함수와 Lifetime
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 13-3 함수와 Lifetime
+- 13-4 Struct와 Lifetime
 
 ## 최근 작업
 
+- Lifetime annotation이 소유한 값의 수명을 줄이지 않고 함수에 전달한 reference 사이의 관계만 표현함을 확인했다.
+- 서로 다른 scope의 두 `String`을 `longer_name`에 전달해 반환 reference가 더 짧은 입력의 유효 범위를 벗어나지 못하는 `E0597`을 경험했다.
+- 반환 reference의 사용을 내부 scope로 제한하고 바깥의 `new_first` 소유값을 계속 사용해 정상 실행 상태로 정리했다.
+- 13-3 함수와 Lifetime 학습을 시작했다.
 - `longer_name<'a>`에 입력과 반환 reference의 Lifetime 관계를 annotation으로 표현했다.
 - 소유한 두 `String`을 빌려 복제 없이 선택된 `&str`을 반환했다.
 - `'a`에서 apostrophe는 Lifetime 표기이고 `a`는 사용자가 정하는 Generic Lifetime 매개변수 이름임을 확인했다.
