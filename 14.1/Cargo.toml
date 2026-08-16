@@ -5,3 +5,4 @@ edition = "2024"
 description = "A text RPG for learning Rust"
 
 [dependencies]
+rand = "0.10.2"

@@ -82,18 +82,24 @@
 - 14-1 `cargo new`와 기본 디렉터리 구조
 - 14-2 기본 개발 명령
 - 14-3 Manifest와 Edition
+- 14-4 Dependency
 
 ## 현재 단계
 
-- 위치: 14-3 Manifest와 Edition
+- 위치: 14-4 Dependency
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 14-4 Dependency
+- 14-5 Package와 Crate
 
 ## 최근 작업
 
+- `cargo add rand`로 crates.io의 `rand 0.10.2`를 직접 dependency로 추가했다.
+- `cargo tree`와 `Cargo.lock`을 통해 `rand`의 전이 dependency, 확정 버전, source, checksum을 확인했다.
+- `rand::random_range(10..=20)`을 호출해 외부 crate API를 RPG의 임의 피해량 생성에 사용했다.
+- dependency는 최초 한 번 컴파일되고 이후 변경이 없으면 Cargo가 기존 artifact를 재사용함을 확인했다.
+- 14-4 Dependency 학습을 시작했다.
 - `Cargo.toml`의 package version과 description metadata를 변경하고 `cargo check`로 유효한 manifest임을 검증했다.
 - Cargo가 root package의 version 변경을 `Cargo.lock`에 자동 반영하며 description은 lockfile의 해석 정보에 포함되지 않음을 확인했다.
 - Rust edition은 컴파일러 버전과 별개인 언어 호환성 규칙 묶음임을 `edition = "2024"`와 `rustc 1.96.0` 비교로 확인했다.
