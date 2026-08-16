@@ -86,18 +86,24 @@
 - 14-5 Package와 Crate
 - 14-6 Binary와 Library 분리
 - 14-7 Module과 공개 범위
+- 14-8 여러 파일로 코드 분리
 
 ## 현재 단계
 
-- 위치: 14-7 Module과 공개 범위
+- 위치: 14-8 여러 파일로 코드 분리
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 14-8 여러 파일로 코드 분리
+- 14-9 기본 개발 도구
 
 ## 최근 작업
 
+- 인라인 `battle` module의 구현을 `src/battle.rs`로 이동하고 `lib.rs`에는 `pub mod battle;` 선언만 남겼다.
+- 빈 인라인 module을 선언해 별도 파일이 연결되지 않으면서 발생한 `E0432`을 통해 `mod name {}`과 `mod name;`의 차이를 확인했다.
+- 파일을 분리한 뒤에도 `rust_rpg::battle::generate_random_damage` 공개 경로가 유지됨을 확인했다.
+- 함수별 파일이 아니라 함께 변경되는 전투 책임을 기준으로 module 파일을 나누는 기준을 확인했다.
+- 14-8 여러 파일로 코드 분리 학습을 시작했다.
 - library crate에 `battle` module을 만들고 module path로 피해량 생성 함수를 구성했다.
 - public 함수가 private module 안에 있을 때 발생한 `E0603`을 통해 외부 접근에는 경로의 모든 경계가 공개되어야 함을 확인했다.
 - `pub mod battle`과 `pub fn`으로 API 경로를 공개하고 binary crate에서 접근했다.
