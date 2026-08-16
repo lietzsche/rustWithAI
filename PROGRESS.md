@@ -70,18 +70,24 @@
 - 11-6 자주 사용하는 표준 라이브러리 패턴
 - 12-1 Generic 함수
 - 12-2 Generic Struct
+- 12-3 Trait
 
 ## 현재 단계
 
-- 위치: 12-2 Generic Struct
+- 위치: 12-3 Trait
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 12-3 Trait
+- 12-4 Trait 구현
 
 ## 최근 작업
 
+- `Combatant` Trait에 이름, 공격력, 생존 여부를 제공하는 method 계약을 정의했다.
+- receiver가 호출 대상 instance를 받는 특별한 첫 번째 매개변수이며 Java의 명시되지 않는 `this`와 대응됨을 확인했다.
+- Trait 선언과 method 선언을 혼동해 발생한 parser 오류를 수정했다.
+- 아직 구현되지 않은 Trait에 발생하는 `dead_code` warning을 확인했다.
+- 12-3 Trait 학습을 시작했다.
 - `RewardBox<T>` Generic Struct를 정의하고 `String`과 `u32`를 소유하는 구체 타입을 생성했다.
 - `RewardBox<String>`에 `&str`을 넣어 발생한 `E0308`을 통해 Generic 타입 인자와 field 타입이 정확히 일치해야 함을 확인했다.
 - 문자열 리터럴을 소유한 `String`으로 변환해 타입 불일치를 해결했다.
