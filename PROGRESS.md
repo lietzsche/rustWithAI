@@ -64,18 +64,24 @@
 - 10-8 Iterator 체이닝
 - 11-1 `HashMap`
 - 11-2 `HashSet`
+- 11-3 `VecDeque`
 
 ## 현재 단계
 
-- 위치: 11-2 `HashSet`
+- 위치: 11-3 `VecDeque`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 11-3 `VecDeque`
+- 11-4 `BinaryHeap`
 
 ## 최근 작업
 
+- `VecDeque<String>`의 앞과 뒤에 행동을 추가해 양방향 queue를 구성했다.
+- `front`와 `back`으로 원소를 빌려 확인하고 `pop_back`으로 마지막 행동의 소유권을 꺼냈다.
+- `while let`과 `pop_front`로 행동을 FIFO 순서로 모두 처리했다.
+- 처리 후 queue의 길이가 0임을 확인했다.
+- 11-3 `VecDeque` 학습을 시작했다.
 - `HashSet<String>`에 값을 삽입하고 중복 삽입 결과가 `false`임을 확인했다.
 - `contains`로 원소 존재 여부를 조회하고 reference 기반으로 set을 순회했다.
 - `remove`의 반환값과 제거 후 길이를 확인했다.
