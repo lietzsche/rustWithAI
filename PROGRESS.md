@@ -88,18 +88,24 @@
 - 14-7 Module과 공개 범위
 - 14-8 여러 파일로 코드 분리
 - 14-9 기본 개발 도구
+- 14-10 `cargo test`와 최소 Unit Test
 
 ## 현재 단계
 
-- 위치: 14-9 기본 개발 도구
+- 위치: 14-10 `cargo test`와 최소 Unit Test
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 14-10 `cargo test`와 최소 Unit Test
+- 14-11 Workspace 기초
 
 ## 최근 작업
 
+- 순수 함수 `calculate_damage`를 추가해 공격력과 방어력에 따른 피해량을 결정적으로 계산했다.
+- `#[cfg(test)]`, `#[test]`, `assert_eq!`로 `battle` module 안에 unit test를 구성했다.
+- 잘못된 기대값으로 test를 실패시켜 test 경로, panic 위치, `left` 실제값과 `right` 기대값을 확인했다.
+- 공격력이 방어력보다 높거나 낮은 두 경우를 검증하고 `cargo test`에서 2개 test가 통과함을 확인했다.
+- 14-10 `cargo test`와 최소 Unit Test 학습을 시작했다.
 - `cargo fmt -- --check`로 formatting 차이를 감지하고 `cargo fmt`로 들여쓰기와 파일 끝 newline을 자동 정리했다.
 - shell의 `$?`가 직전 명령의 종료 코드를 나타내며 0은 성공, 0 이외는 실패나 차이 발견임을 확인했다.
 - Clippy의 `needless_late_init`과 `needless_bool_assign` lint를 통해 늦은 초기화와 불필요한 boolean 분기를 단순화했다.
