@@ -74,18 +74,24 @@
 - 12-4 Trait 구현
 - 12-5 Trait Bound
 - 12-6 여러 Trait 조합
+- 13-1 Lifetime이 필요한 이유
 
 ## 현재 단계
 
-- 위치: 12-6 여러 Trait 조합
+- 위치: 13-1 Lifetime이 필요한 이유
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 13-1 Lifetime이 필요한 이유
+- 13-2 Lifetime annotation
 
 ## 최근 작업
 
+- 두 `&str` 중 하나를 반환하는 함수에서 발생한 `E0106`을 통해 반환 reference와 입력 reference의 관계가 필요함을 확인했다.
+- Lifetime은 실제 값의 수명을 늘리는 기능이 아니라 reference 사이의 유효 범위 관계를 표현하는 타입 정보임을 이해했다.
+- 선택한 문자열을 소유한 `String`으로 반환해 입력 Lifetime에 의존하지 않는 대안을 구현했다.
+- 반환값과 두 원본 `String`을 함께 사용해 소유권이 분리되어 있음을 확인했다.
+- 13-1 Lifetime이 필요한 이유 학습을 시작했다.
 - `HasLevel` Trait을 정의하고 Player와 Monster에 구현했다.
 - `show_ranked_combatant<T: Combatant + HasLevel>`에서 두 Trait Bound를 AND 조건으로 조합했다.
 - Generic 함수 안에서 두 Trait이 제공하는 method를 함께 호출했다.
