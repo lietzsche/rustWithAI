@@ -58,18 +58,23 @@
 - 10-2 `iter`
 - 10-3 `iter_mut`
 - 10-4 `into_iter`
+- 10-5 `map`
 
 ## 현재 단계
 
-- 위치: 10-4 `into_iter`
+- 위치: 10-5 `map`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 10-5 `map`
+- 10-6 `filter`
 
 ## 최근 작업
 
+- `.iter().map(...)`으로 피해량을 변환하는 지연 iterator를 만들었다.
+- `Map` iterator와 `Vec<i32>`를 대입해 발생한 `E0308` 타입 불일치를 확인했다.
+- 이미 iterator인 `Map`에 `.iter()`를 다시 호출해 발생한 `E0599`를 수정했다.
+- `for`가 변환 iterator를 소비할 때 closure가 실행되고 원본 Vec는 유지됨을 확인했다.
 - `loot_items.into_iter()`로 `Vec<String>`의 소유권을 iterator에 넘겼다.
 - 소비된 Vec를 다시 사용해 `E0382` 오류를 경험하고 이동 지점을 확인했다.
 - `into_iter()`에서 각 원소가 `String` 값으로 전달되는 것을 확인했다.
