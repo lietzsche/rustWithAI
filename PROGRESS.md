@@ -73,18 +73,24 @@
 - 12-3 Trait
 - 12-4 Trait 구현
 - 12-5 Trait Bound
+- 12-6 여러 Trait 조합
 
 ## 현재 단계
 
-- 위치: 12-5 Trait Bound
+- 위치: 12-6 여러 Trait 조합
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 12-6 여러 Trait 조합
+- 13-1 Lifetime이 필요한 이유
 
 ## 최근 작업
 
+- `HasLevel` Trait을 정의하고 Player와 Monster에 구현했다.
+- `show_ranked_combatant<T: Combatant + HasLevel>`에서 두 Trait Bound를 AND 조건으로 조합했다.
+- Generic 함수 안에서 두 Trait이 제공하는 method를 함께 호출했다.
+- `&T`로 두 원본을 빌려 처리한 뒤 다시 사용했다.
+- 12-6 여러 Trait 조합 학습을 시작했다.
 - `show_combatant<T: Combatant>` Generic 함수에 Trait Bound를 지정했다.
 - bound가 보장하는 `name`, `attack_power`, `is_alive` method를 Generic 함수 내부에서 호출했다.
 - `Combatant`를 구현하지 않은 `Item`을 전달해 발생한 `E0277`을 통해 bound가 호출 가능한 타입을 제한함을 확인했다.
