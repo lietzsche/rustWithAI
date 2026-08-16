@@ -77,18 +77,23 @@
 - 13-1 Lifetime이 필요한 이유
 - 13-2 Lifetime annotation
 - 13-3 함수와 Lifetime
+- 13-4 Struct와 Lifetime
 
 ## 현재 단계
 
-- 위치: 13-3 함수와 Lifetime
+- 위치: 13-4 Struct와 Lifetime
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 13-4 Struct와 Lifetime
+- 13-5 Lifetime elision
 
 ## 최근 작업
 
+- `BattleMessage<'a>`에 `&'a str` field를 선언해 struct instance와 빌린 문자열의 Lifetime 관계를 표현했다.
+- 원본 `String`보다 참조를 보관한 struct를 오래 사용해 발생한 `E0597`을 통해 struct가 참조 대상보다 오래 살 수 없음을 확인했다.
+- 원본 문자열과 `BattleMessage`를 같은 scope 안에서 생성하고 사용해 정상 실행 상태로 정리했다.
+- 13-4 Struct와 Lifetime 학습을 시작했다.
 - Lifetime annotation이 소유한 값의 수명을 줄이지 않고 함수에 전달한 reference 사이의 관계만 표현함을 확인했다.
 - 서로 다른 scope의 두 `String`을 `longer_name`에 전달해 반환 reference가 더 짧은 입력의 유효 범위를 벗어나지 못하는 `E0597`을 경험했다.
 - 반환 reference의 사용을 내부 scope로 제한하고 바깥의 `new_first` 소유값을 계속 사용해 정상 실행 상태로 정리했다.
