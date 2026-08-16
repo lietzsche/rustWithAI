@@ -78,18 +78,23 @@
 - 13-2 Lifetime annotation
 - 13-3 함수와 Lifetime
 - 13-4 Struct와 Lifetime
+- 13-5 Lifetime elision
 
 ## 현재 단계
 
-- 위치: 13-4 Struct와 Lifetime
+- 위치: 13-5 Lifetime elision
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 13-5 Lifetime elision
+- 14-1 `cargo new`와 기본 디렉터리 구조
 
 ## 최근 작업
 
+- 입력 reference가 하나인 `borrow_message(&str) -> &str`에서 Lifetime annotation을 생략하고 컴파일러가 반환 Lifetime을 입력과 연결함을 확인했다.
+- 기존 `name(&self) -> &str` method들을 통해 `self` reference의 Lifetime이 반환 reference에 적용되는 method 생략 규칙을 확인했다.
+- 두 입력 중 하나를 반환하는 `longer_name`에는 생략 규칙만으로 관계를 결정할 수 없어 명시적인 annotation이 계속 필요함을 비교했다.
+- 13-5 Lifetime elision 학습을 시작했다.
 - `BattleMessage<'a>`에 `&'a str` field를 선언해 struct instance와 빌린 문자열의 Lifetime 관계를 표현했다.
 - 원본 `String`보다 참조를 보관한 struct를 오래 사용해 발생한 `E0597`을 통해 struct가 참조 대상보다 오래 살 수 없음을 확인했다.
 - 원본 문자열과 `BattleMessage`를 같은 scope 안에서 생성하고 사용해 정상 실행 상태로 정리했다.
