@@ -49,18 +49,22 @@
 - 8-5 Pattern과 destructuring 기초
 - 9-1 `Option<T>`
 - 9-2 `Some` / `None`
+- 9-3 `Result<T, E>`
 
 ## 현재 단계
 
-- 위치: 9-2 `Some` / `None`
+- 위치: 9-3 `Result<T, E>`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 9-3 `Result<T, E>`
+- 9-4 `Ok` / `Err`
 
 ## 최근 작업
 
+- `Err` 뒤 세미콜론으로 함수가 `()`을 반환하는 `E0308` 오류를 경험했다.
+- `String` 반환 타입과 `Result<_, String>` 값의 타입 불일치를 확인했다.
+- 반환 타입을 `Result<String, String>`으로 명시해 실패 가능성을 타입에 표현했다.
 - `Some(String)`과 `None`으로 `Option<String>`의 두 상태를 생성했다.
 - `&Option<String>`을 `match`해 내부 값을 소유권 이동 없이 읽었다.
 - 함수 호출 후 원래 `Some` 값을 다시 사용해 borrowing을 확인했다.
