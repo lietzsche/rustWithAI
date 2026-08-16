@@ -81,18 +81,23 @@
 - 13-5 Lifetime elision
 - 14-1 `cargo new`와 기본 디렉터리 구조
 - 14-2 기본 개발 명령
+- 14-3 Manifest와 Edition
 
 ## 현재 단계
 
-- 위치: 14-2 기본 개발 명령
+- 위치: 14-3 Manifest와 Edition
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 14-3 Manifest와 Edition
+- 14-4 Dependency
 
 ## 최근 작업
 
+- `Cargo.toml`의 package version과 description metadata를 변경하고 `cargo check`로 유효한 manifest임을 검증했다.
+- Cargo가 root package의 version 변경을 `Cargo.lock`에 자동 반영하며 description은 lockfile의 해석 정보에 포함되지 않음을 확인했다.
+- Rust edition은 컴파일러 버전과 별개인 언어 호환성 규칙 묶음임을 `edition = "2024"`와 `rustc 1.96.0` 비교로 확인했다.
+- 14-3 Manifest와 Edition 학습을 시작했다.
 - `cargo check`로 실행 파일을 만들거나 실행하지 않고 package의 컴파일 가능 여부를 빠르게 검사했다.
 - `cargo build`로 `target/debug/rust-rpg` 실행 파일을 생성하고 직접 실행했다.
 - `cargo run`이 필요할 때 빌드한 뒤 binary를 실행하며, 변경이 없으면 기존 artifact를 재사용함을 확인했다.
