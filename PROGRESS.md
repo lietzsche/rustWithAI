@@ -65,18 +65,24 @@
 - 11-1 `HashMap`
 - 11-2 `HashSet`
 - 11-3 `VecDeque`
+- 11-4 `BinaryHeap`
 
 ## 현재 단계
 
-- 위치: 11-3 `VecDeque`
+- 위치: 11-4 `BinaryHeap`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 11-4 `BinaryHeap`
+- 11-5 정렬
 
 ## 최근 작업
 
+- `BinaryHeap<i32>`에 피해량을 추가하고 `peek`으로 최댓값을 빌려 확인했다.
+- `pop`으로 현재 최댓값을 꺼내 피해량을 내림차순으로 처리했다.
+- generic 타입 인자를 생략해 발생한 `E0107`을 이해하고 타입 annotation을 수정했다.
+- 모든 원소를 꺼낸 뒤 heap의 길이가 0임을 확인했다.
+- 11-4 `BinaryHeap` 학습을 시작했다.
 - `VecDeque<String>`의 앞과 뒤에 행동을 추가해 양방향 queue를 구성했다.
 - `front`와 `back`으로 원소를 빌려 확인하고 `pop_back`으로 마지막 행동의 소유권을 꺼냈다.
 - `while let`과 `pop_front`로 행동을 FIFO 순서로 모두 처리했다.
