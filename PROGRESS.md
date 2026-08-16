@@ -79,18 +79,23 @@
 - 13-3 함수와 Lifetime
 - 13-4 Struct와 Lifetime
 - 13-5 Lifetime elision
+- 14-1 `cargo new`와 기본 디렉터리 구조
 
 ## 현재 단계
 
-- 위치: 13-5 Lifetime elision
+- 위치: 14-1 `cargo new`와 기본 디렉터리 구조
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 14-1 `cargo new`와 기본 디렉터리 구조
+- 14-2 기본 개발 명령
 
 ## 최근 작업
 
+- `cargo new 14.1 --name rust-rpg`로 학습 단계 디렉터리와 유효한 Cargo package 이름을 분리해 binary package를 생성했다.
+- `Cargo.toml`이 package metadata와 dependency를 관리하고 `src/main.rs`가 기본 binary crate root임을 확인했다.
+- 빌드 전에는 `target/`과 `Cargo.lock`이 아직 생성되지 않은 초기 디렉터리 상태를 확인했다.
+- 14-1 `cargo new`와 기본 디렉터리 구조 학습을 시작했다.
 - 입력 reference가 하나인 `borrow_message(&str) -> &str`에서 Lifetime annotation을 생략하고 컴파일러가 반환 Lifetime을 입력과 연결함을 확인했다.
 - 기존 `name(&self) -> &str` method들을 통해 `self` reference의 Lifetime이 반환 reference에 적용되는 method 생략 규칙을 확인했다.
 - 두 입력 중 하나를 반환하는 `longer_name`에는 생략 규칙만으로 관계를 결정할 수 없어 명시적인 annotation이 계속 필요함을 비교했다.
