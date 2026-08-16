@@ -51,18 +51,22 @@
 - 9-2 `Some` / `None`
 - 9-3 `Result<T, E>`
 - 9-4 `Ok` / `Err`
+- 9-5 `unwrap`
 
 ## 현재 단계
 
-- 위치: 9-4 `Ok` / `Err`
+- 위치: 9-5 `unwrap`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 9-5 `unwrap`
+- 9-6 `expect`
 
 ## 최근 작업
 
+- `Ok(String)`에 `unwrap()`을 사용해 성공값을 직접 꺼냈다.
+- `Err(String)`에 `unwrap()`을 호출해 런타임 panic과 이후 코드 중단을 경험했다.
+- 실패 가능성이 있는 값에서 `unwrap()`을 사용할 때의 위험을 확인했다.
 - `if / else` expression으로 `Ok(String)`과 `Err(String)`을 반환했다.
 - `&Result<String, String>`을 `match`해 성공값과 오류값을 모두 처리했다.
 - 결과를 reference로 처리해 원본의 소유권을 이동시키지 않았다.
