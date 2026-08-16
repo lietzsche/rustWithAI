@@ -56,18 +56,22 @@
 - 9-7 `?` 연산자
 - 10-1 Closure
 - 10-2 `iter`
+- 10-3 `iter_mut`
 
 ## 현재 단계
 
-- 위치: 10-2 `iter`
+- 위치: 10-3 `iter_mut`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 10-3 `iter_mut`
+- 10-4 `into_iter`
 
 ## 최근 작업
 
+- `quest_inventory.iter_mut()`로 각 원소를 `&mut String`으로 순회했다.
+- `push_str`로 Vec의 `String` 원소를 제자리에서 변경했다.
+- mutable 순회 종료 후 `.iter()`로 변경 결과를 다시 읽어 borrow 범위를 확인했다.
 - 기본기 커리큘럼을 1~14장으로 재구성하고 14장을 Cargo와 실제 프로젝트 진입 과정으로 확정했다.
 - `CURRICULUM.md`를 학습 순서의 정본으로 분리하고 14장 완료 후 네트워크 프로젝트 전환 절차를 기록했다.
 - `AGENTS.md`, `CLAUDE.md`, `README.md`의 역할을 에이전트 지침과 사람용 안내로 분리했다.
