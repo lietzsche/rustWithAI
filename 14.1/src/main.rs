@@ -11,4 +11,7 @@ fn main() {
     let crate_path = module_path!();
     println!("package_name: {}", package_name);
     println!("crate_path: {}", crate_path);
+
+    let is_positive = random_damage > 0;
+    println!("is positive: {}", is_positive);
 }

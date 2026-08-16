@@ -87,18 +87,24 @@
 - 14-6 Binary와 Library 분리
 - 14-7 Module과 공개 범위
 - 14-8 여러 파일로 코드 분리
+- 14-9 기본 개발 도구
 
 ## 현재 단계
 
-- 위치: 14-8 여러 파일로 코드 분리
+- 위치: 14-9 기본 개발 도구
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 14-9 기본 개발 도구
+- 14-10 `cargo test`와 최소 Unit Test
 
 ## 최근 작업
 
+- `cargo fmt -- --check`로 formatting 차이를 감지하고 `cargo fmt`로 들여쓰기와 파일 끝 newline을 자동 정리했다.
+- shell의 `$?`가 직전 명령의 종료 코드를 나타내며 0은 성공, 0 이외는 실패나 차이 발견임을 확인했다.
+- Clippy의 `needless_late_init`과 `needless_bool_assign` lint를 통해 늦은 초기화와 불필요한 boolean 분기를 단순화했다.
+- `cargo clippy --all-targets -- -D warnings`로 모든 target에서 warning 없는 상태를 검증했다.
+- 14-9 기본 개발 도구 학습을 시작했다.
 - 인라인 `battle` module의 구현을 `src/battle.rs`로 이동하고 `lib.rs`에는 `pub mod battle;` 선언만 남겼다.
 - 빈 인라인 module을 선언해 별도 파일이 연결되지 않으면서 발생한 `E0432`을 통해 `mod name {}`과 `mod name;`의 차이를 확인했다.
 - 파일을 분리한 뒤에도 `rust_rpg::battle::generate_random_damage` 공개 경로가 유지됨을 확인했다.
