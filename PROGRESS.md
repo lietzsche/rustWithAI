@@ -69,18 +69,24 @@
 - 11-5 정렬
 - 11-6 자주 사용하는 표준 라이브러리 패턴
 - 12-1 Generic 함수
+- 12-2 Generic Struct
 
 ## 현재 단계
 
-- 위치: 12-1 Generic 함수
+- 위치: 12-2 Generic Struct
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 12-2 Generic Struct
+- 12-3 Trait
 
 ## 최근 작업
 
+- `RewardBox<T>` Generic Struct를 정의하고 `String`과 `u32`를 소유하는 구체 타입을 생성했다.
+- `RewardBox<String>`에 `&str`을 넣어 발생한 `E0308`을 통해 Generic 타입 인자와 field 타입이 정확히 일치해야 함을 확인했다.
+- 문자열 리터럴을 소유한 `String`으로 변환해 타입 불일치를 해결했다.
+- field 출력 후 다시 길이를 조회해 `println!`이 field를 빌려 읽고 소유권을 유지함을 확인했다.
+- 12-2 Generic Struct 학습을 시작했다.
 - `choose_reward<T>` Generic 함수를 정의해 같은 타입의 두 값 중 하나를 반환했다.
 - 같은 함수를 `String`과 `u32` 호출에 재사용하고 호출별로 `T`가 추론되는 것을 확인했다.
 - `String` 인자를 값으로 전달하고 선택된 값의 소유권을 반환받았다.
