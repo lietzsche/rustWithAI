@@ -60,18 +60,22 @@
 - 10-4 `into_iter`
 - 10-5 `map`
 - 10-6 `filter`
+- 10-7 `collect`
 
 ## 현재 단계
 
-- 위치: 10-6 `filter`
+- 위치: 10-7 `collect`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 10-7 `collect`
+- 10-8 Iterator 체이닝
 
 ## 최근 작업
 
+- `.iter().map(...).collect()`로 지연 iterator를 새로운 `Vec<i32>`로 완성했다.
+- `collect()` 결과 타입을 명시해 생성할 컬렉션을 결정했다.
+- 원본 Vec는 borrow만 하고 결과 Vec를 별도로 소유해 두 컬렉션을 모두 사용했다.
 - `.iter().filter(...)`로 20 이상의 피해량만 통과시키는 지연 iterator를 만들었다.
 - `filter` predicate가 `&&i32`를 받는 이유와 `E0308` 타입 불일치를 확인했다.
 - `|&&item|` pattern으로 reference 두 단계를 해체하고 `i32` 값을 복사해 비교했다.
