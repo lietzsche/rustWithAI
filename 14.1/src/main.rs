@@ -1,7 +1,9 @@
+use rust_rpg::battle::generate_random_damage;
+
 fn main() {
     println!("rust rpg started");
 
-    let random_damage: i32 = rust_rpg::generate_random_damage();
+    let random_damage: i32 = generate_random_damage();
 
     println!("random_damage: {}", random_damage);
 

@@ -85,18 +85,24 @@
 - 14-4 Dependency
 - 14-5 Package와 Crate
 - 14-6 Binary와 Library 분리
+- 14-7 Module과 공개 범위
 
 ## 현재 단계
 
-- 위치: 14-6 Binary와 Library 분리
+- 위치: 14-7 Module과 공개 범위
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 14-7 Module과 공개 범위
+- 14-8 여러 파일로 코드 분리
 
 ## 최근 작업
 
+- library crate에 `battle` module을 만들고 module path로 피해량 생성 함수를 구성했다.
+- public 함수가 private module 안에 있을 때 발생한 `E0603`을 통해 외부 접근에는 경로의 모든 경계가 공개되어야 함을 확인했다.
+- `pub mod battle`과 `pub fn`으로 API 경로를 공개하고 binary crate에서 접근했다.
+- `use rust_rpg::battle::generate_random_damage`로 긴 경로를 현재 scope에 가져와 짧은 이름으로 호출했다.
+- 14-7 Module과 공개 범위 학습을 시작했다.
 - `src/lib.rs`를 library crate root로 추가하고 임의 피해량 생성 로직을 public 함수로 분리했다.
 - `src/main.rs`의 binary crate가 `rust_rpg::generate_random_damage()`로 같은 package의 library API를 호출했다.
 - `cargo check --lib`과 `cargo check --bin rust-rpg`로 library와 binary target을 각각 검사했다.
