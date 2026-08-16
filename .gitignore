@@ -1,2 +1,5 @@
 # rustc로 생성한 과제 실행 파일
 homework
+
+# 저장소 내부 Cargo package의 빌드 결과물
+**/target/
