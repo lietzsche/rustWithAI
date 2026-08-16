@@ -63,18 +63,24 @@
 - 10-7 `collect`
 - 10-8 Iterator 체이닝
 - 11-1 `HashMap`
+- 11-2 `HashSet`
 
 ## 현재 단계
 
-- 위치: 11-1 `HashMap`
+- 위치: 11-2 `HashSet`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 11-2 `HashSet`
+- 11-3 `VecDeque`
 
 ## 최근 작업
 
+- `HashSet<String>`에 값을 삽입하고 중복 삽입 결과가 `false`임을 확인했다.
+- `contains`로 원소 존재 여부를 조회하고 reference 기반으로 set을 순회했다.
+- `remove`의 반환값과 제거 후 길이를 확인했다.
+- 이미 생성된 iterator에 `&`를 추가해 발생한 `E0277`과 immutable set을 변경해 발생한 `E0596`을 수정했다.
+- 11-2 `HashSet` 학습을 시작했다.
 - `HashMap<String, u32>`를 생성하고 `insert`로 아이템 가격 데이터를 저장했다.
 - `get`이 반환한 `Option<&u32>`를 `match`해 존재하는 key와 존재하지 않는 key를 처리했다.
 - `String` key를 `&str`로 조회하고 map을 reference 기반으로 순회했다.
