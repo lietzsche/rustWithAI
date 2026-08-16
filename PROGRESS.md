@@ -84,18 +84,24 @@
 - 14-3 Manifest와 Edition
 - 14-4 Dependency
 - 14-5 Package와 Crate
+- 14-6 Binary와 Library 분리
 
 ## 현재 단계
 
-- 위치: 14-5 Package와 Crate
+- 위치: 14-6 Binary와 Library 분리
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 14-6 Binary와 Library 분리
+- 14-7 Module과 공개 범위
 
 ## 최근 작업
 
+- `src/lib.rs`를 library crate root로 추가하고 임의 피해량 생성 로직을 public 함수로 분리했다.
+- `src/main.rs`의 binary crate가 `rust_rpg::generate_random_damage()`로 같은 package의 library API를 호출했다.
+- `cargo check --lib`과 `cargo check --bin rust-rpg`로 library와 binary target을 각각 검사했다.
+- Cargo metadata에서 하나의 package 아래 `lib`과 `bin` 두 crate target이 존재함을 확인했다.
+- 14-6 Binary와 Library 분리 학습을 시작했다.
 - `Cargo.toml`이 관리하는 package와 Rust 컴파일 단위인 crate를 구분했다.
 - 현재 package에 `src/main.rs`를 crate root로 하는 binary crate target 하나가 있음을 확인했다.
 - `env!("CARGO_PKG_NAME")`과 `module_path!()`를 비교해 package 이름 `rust-rpg`가 Rust crate 식별자 `rust_rpg`로 정규화됨을 확인했다.

@@ -1,7 +1,7 @@
 fn main() {
     println!("rust rpg started");
 
-    let random_damage: i32 = rand::random_range(10..=20);
+    let random_damage: i32 = rust_rpg::generate_random_damage();
 
     println!("random_damage: {}", random_damage);
 
