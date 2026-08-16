@@ -61,18 +61,22 @@
 - 10-5 `map`
 - 10-6 `filter`
 - 10-7 `collect`
+- 10-8 Iterator 체이닝
 
 ## 현재 단계
 
-- 위치: 10-7 `collect`
+- 위치: 10-8 Iterator 체이닝
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 10-8 Iterator 체이닝
+- 11-1 `HashMap`
 
 ## 최근 작업
 
+- `iter → filter → map → collect`를 하나의 iterator expression으로 연결했다.
+- 조건에 맞는 원소만 선택하고 변환해 새로운 `Vec<i32>`로 수집했다.
+- 원본 Vec는 borrow만 하여 체인 실행 후에도 그대로 사용할 수 있음을 확인했다.
 - `.iter().map(...).collect()`로 지연 iterator를 새로운 `Vec<i32>`로 완성했다.
 - `collect()` 결과 타입을 명시해 생성할 컬렉션을 결정했다.
 - 원본 Vec는 borrow만 하고 결과 Vec를 별도로 소유해 두 컬렉션을 모두 사용했다.
