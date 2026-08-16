@@ -90,18 +90,25 @@
 - 14-9 기본 개발 도구
 - 14-10 `cargo test`와 최소 Unit Test
 - 14-11 Workspace 기초
+- 14-12 기존 RPG의 Cargo 프로젝트 전환
 
 ## 현재 단계
 
-- 위치: 14-11 Workspace 기초
-- 상태: 과제 작성 및 피드백 완료
+- 위치: Rust 기본기 과정 1~14장 완료
+- 상태: 완료
 
 ## 다음 단계
 
-- 14-12 기존 RPG의 Cargo 프로젝트 전환
+- 다음 프로젝트 범위와 기본기 자료 전환 절차 논의
 
 ## 최근 작업
 
+- `13.5/homework.rs`의 누적 RPG 전체를 `14.1/src/main.rs`의 Cargo binary crate로 이전했다.
+- binary의 중복 `calculate_damage`를 제거하고 `rust_rpg::battle` library API와 unit test를 재사용하도록 연결했다.
+- Cargo formatter를 전체 코드에 적용하고 struct field 축약, iterator 순회, 늦은 초기화에 대한 Clippy lint를 수정했다.
+- workspace 전체에서 `fmt`, `check`, `test`, `clippy -D warnings`, 최종 binary 실행을 검증했다.
+- 14-12를 완료해 Rust 기본기 과정 1~14장의 종료 조건을 충족했다.
+- 14-12 기존 RPG의 Cargo 프로젝트 전환 학습을 시작했다.
 - 저장소 루트에 `[workspace]`, `members = ["14.1"]`, `resolver = "3"`을 가진 virtual workspace manifest를 구성했다.
 - TOML table 설명을 값으로 입력한 parser 오류와 `member`/`members` 키 불일치를 수정했다.
 - workspace root에서 member 전체의 check와 test를 실행하고 Cargo metadata의 `workspace_root`와 member 정보를 확인했다.

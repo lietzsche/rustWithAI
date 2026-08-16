@@ -2,7 +2,7 @@
 
 Java, JavaScript, TypeScript에 익숙한 개발자가 Rust 기본기를 직접 코딩하며 익히는 학습 저장소다.
 
-현재 과정은 텍스트 RPG를 지속적으로 확장하면서 문법, Ownership, Borrowing, Trait, Lifetime을 경험하고, 마지막에는 Cargo 기반 프로젝트로 전환하는 것을 목표로 한다.
+텍스트 RPG를 지속적으로 확장하면서 문법, Ownership, Borrowing, Trait, Lifetime을 경험하고 Cargo 기반 프로젝트로 전환하는 Rust 기본기 과정을 담고 있다.
 
 ## 문서
 
@@ -12,6 +12,10 @@ Java, JavaScript, TypeScript에 익숙한 개발자가 Rust 기본기를 직접 
 - [CLAUDE.md](CLAUDE.md): Claude 작업 지침
 
 커리큘럼과 진도는 채팅 기록이 아니라 위 문서를 정본으로 관리한다.
+
+## 현재 상태
+
+1~14장의 Rust 기본기 과정과 기존 RPG의 Cargo package 전환을 완료했다. 다음 프로젝트를 만들거나 기존 자료를 이동하기 전, 프로젝트 범위와 저장소 전환 절차를 논의하는 단계다.
 
 ## 현재 학습 방식
 
@@ -47,19 +51,21 @@ rustc homework.rs
 
 생성된 `homework` 실행 파일은 Git에서 제외한다.
 
-14장에서는 기존 단일 파일 RPG를 Cargo package로 전환하고 다음 개발 루프를 익힌다.
+14장에서 전환한 Cargo workspace와 RPG package는 저장소 루트에서 다음과 같이 검증·실행한다.
 
 ```bash
-cargo check
-cargo run
-cargo test
-cargo fmt
-cargo clippy
+cargo fmt --all -- --check
+cargo check --workspace
+cargo test --workspace
+cargo clippy --workspace --all-targets -- -D warnings
+cargo run -p rust-rpg
 ```
+
+Cargo package는 `14.1/`에 있고 루트 `Cargo.toml`의 workspace member로 등록되어 있다.
 
 ## 기본기 과정 종료 기준
 
-1~13장에서 Rust 언어 핵심을 학습하고, 14장에서 Cargo와 실제 프로젝트 구조를 익히면 기본기 과정을 종료한다.
+1~13장에서 Rust 언어 핵심을 학습하고, 14장에서 Cargo와 실제 프로젝트 구조를 익혀 기본기 과정을 완료했다.
 
 공식 문서 정독, custom error crate, concurrency, async는 기본기 선행 과정으로 강제하지 않는다. 이후 실제 프로젝트에서 필요해질 때 공식 문서를 찾아보고 구현과 함께 학습한다.
 
