@@ -1,3 +1,3 @@
 [workspace]
-members = ["14.1"]
+members = ["projects/network-lab"]
 resolver = "3"

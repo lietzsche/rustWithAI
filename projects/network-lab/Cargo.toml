@@ -1,0 +1,7 @@
+[package]
+name = "network-lab"
+version = "0.1.0"
+edition = "2024"
+description = "Problem-driven network systems learning in Rust"
+
+[dependencies]
