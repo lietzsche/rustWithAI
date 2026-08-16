@@ -55,18 +55,22 @@
 - 9-6 `expect`
 - 9-7 `?` 연산자
 - 10-1 Closure
+- 10-2 `iter`
 
 ## 현재 단계
 
-- 위치: 10-1 Closure
+- 위치: 10-2 `iter`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 10-2 `iter`
+- 10-3 `iter_mut`
 
 ## 최근 작업
 
+- `quest_inventory.iter()`로 `&String` 원소를 순회했다.
+- iterator 순회 후에도 원래 Vec의 소유권과 길이가 유지됨을 확인했다.
+- `&collection` 반복과 명시적인 `.iter()`의 관계를 연결했다.
 - closure를 변수에 저장하고 함수처럼 호출해 critical 피해량을 계산했다.
 - 주변 scope의 `critical_bonus`를 immutable capture했다.
 - closure 호출 후에도 capture된 원본 변수를 다시 사용했다.
