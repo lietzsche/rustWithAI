@@ -83,18 +83,24 @@
 - 14-2 기본 개발 명령
 - 14-3 Manifest와 Edition
 - 14-4 Dependency
+- 14-5 Package와 Crate
 
 ## 현재 단계
 
-- 위치: 14-4 Dependency
+- 위치: 14-5 Package와 Crate
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 14-5 Package와 Crate
+- 14-6 Binary와 Library 분리
 
 ## 최근 작업
 
+- `Cargo.toml`이 관리하는 package와 Rust 컴파일 단위인 crate를 구분했다.
+- 현재 package에 `src/main.rs`를 crate root로 하는 binary crate target 하나가 있음을 확인했다.
+- `env!("CARGO_PKG_NAME")`과 `module_path!()`를 비교해 package 이름 `rust-rpg`가 Rust crate 식별자 `rust_rpg`로 정규화됨을 확인했다.
+- `cargo check --bin rust-rpg`로 package 안의 특정 binary target을 선택해 검사했다.
+- 14-5 Package와 Crate 학습을 시작했다.
 - `cargo add rand`로 crates.io의 `rand 0.10.2`를 직접 dependency로 추가했다.
 - `cargo tree`와 `Cargo.lock`을 통해 `rand`의 전이 dependency, 확정 버전, source, checksum을 확인했다.
 - `rand::random_range(10..=20)`을 호출해 외부 crate API를 RPG의 임의 피해량 생성에 사용했다.
