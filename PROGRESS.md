@@ -62,18 +62,24 @@
 - 10-6 `filter`
 - 10-7 `collect`
 - 10-8 Iterator 체이닝
+- 11-1 `HashMap`
 
 ## 현재 단계
 
-- 위치: 10-8 Iterator 체이닝
+- 위치: 11-1 `HashMap`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 11-1 `HashMap`
+- 11-2 `HashSet`
 
 ## 최근 작업
 
+- `HashMap<String, u32>`를 생성하고 `insert`로 아이템 가격 데이터를 저장했다.
+- `get`이 반환한 `Option<&u32>`를 `match`해 존재하는 key와 존재하지 않는 key를 처리했다.
+- `String` key를 `&str`로 조회하고 map을 reference 기반으로 순회했다.
+- 순회 후에도 원본 `HashMap`의 소유권이 유지됨을 `len`으로 확인했다.
+- 11-1 `HashMap` 학습을 시작했다.
 - `iter → filter → map → collect`를 하나의 iterator expression으로 연결했다.
 - 조건에 맞는 원소만 선택하고 변환해 새로운 `Vec<i32>`로 수집했다.
 - 원본 Vec는 borrow만 하여 체인 실행 후에도 그대로 사용할 수 있음을 확인했다.
