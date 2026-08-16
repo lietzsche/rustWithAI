@@ -57,18 +57,22 @@
 - 10-1 Closure
 - 10-2 `iter`
 - 10-3 `iter_mut`
+- 10-4 `into_iter`
 
 ## 현재 단계
 
-- 위치: 10-3 `iter_mut`
+- 위치: 10-4 `into_iter`
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 10-4 `into_iter`
+- 10-5 `map`
 
 ## 최근 작업
 
+- `loot_items.into_iter()`로 `Vec<String>`의 소유권을 iterator에 넘겼다.
+- 소비된 Vec를 다시 사용해 `E0382` 오류를 경험하고 이동 지점을 확인했다.
+- `into_iter()`에서 각 원소가 `String` 값으로 전달되는 것을 확인했다.
 - `quest_inventory.iter_mut()`로 각 원소를 `&mut String`으로 순회했다.
 - `push_str`로 Vec의 `String` 원소를 제자리에서 변경했다.
 - mutable 순회 종료 후 `.iter()`로 변경 결과를 다시 읽어 borrow 범위를 확인했다.
