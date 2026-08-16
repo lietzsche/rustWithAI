@@ -80,18 +80,24 @@
 - 13-4 Struct와 Lifetime
 - 13-5 Lifetime elision
 - 14-1 `cargo new`와 기본 디렉터리 구조
+- 14-2 기본 개발 명령
 
 ## 현재 단계
 
-- 위치: 14-1 `cargo new`와 기본 디렉터리 구조
+- 위치: 14-2 기본 개발 명령
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 14-2 기본 개발 명령
+- 14-3 Manifest와 Edition
 
 ## 최근 작업
 
+- `cargo check`로 실행 파일을 만들거나 실행하지 않고 package의 컴파일 가능 여부를 빠르게 검사했다.
+- `cargo build`로 `target/debug/rust-rpg` 실행 파일을 생성하고 직접 실행했다.
+- `cargo run`이 필요할 때 빌드한 뒤 binary를 실행하며, 변경이 없으면 기존 artifact를 재사용함을 확인했다.
+- Cargo 명령 실행 후 `Cargo.lock`과 `target/`이 생성되고 `target/`은 Git에서 제외됨을 확인했다.
+- 14-2 기본 개발 명령 학습을 시작했다.
 - `cargo new 14.1 --name rust-rpg`로 학습 단계 디렉터리와 유효한 Cargo package 이름을 분리해 binary package를 생성했다.
 - `Cargo.toml`이 package metadata와 dependency를 관리하고 `src/main.rs`가 기본 binary crate root임을 확인했다.
 - 빌드 전에는 `target/`과 `Cargo.lock`이 아직 생성되지 않은 초기 디렉터리 상태를 확인했다.
