@@ -54,18 +54,22 @@
 - 9-5 `unwrap`
 - 9-6 `expect`
 - 9-7 `?` 연산자
+- 10-1 Closure
 
 ## 현재 단계
 
-- 위치: 9-7 `?` 연산자
+- 위치: 10-1 Closure
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 10-1 Closure
+- 10-2 `iter`
 
 ## 최근 작업
 
+- closure를 변수에 저장하고 함수처럼 호출해 critical 피해량을 계산했다.
+- 주변 scope의 `critical_bonus`를 immutable capture했다.
+- closure 호출 후에도 capture된 원본 변수를 다시 사용했다.
 - `()`을 반환하는 `main`에서 `?`를 사용해 `E0277` 오류를 경험했다.
 - `Result<String, String>` 함수에서 `?`로 성공값을 꺼내고 오류를 조기 반환했다.
 - 성공 경로만 후속 처리를 실행하고 실패 경로는 `Err`를 호출자에게 전파했다.
