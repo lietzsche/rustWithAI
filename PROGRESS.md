@@ -72,18 +72,24 @@
 - 12-2 Generic Struct
 - 12-3 Trait
 - 12-4 Trait 구현
+- 12-5 Trait Bound
 
 ## 현재 단계
 
-- 위치: 12-4 Trait 구현
+- 위치: 12-5 Trait Bound
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 12-5 Trait Bound
+- 12-6 여러 Trait 조합
 
 ## 최근 작업
 
+- `show_combatant<T: Combatant>` Generic 함수에 Trait Bound를 지정했다.
+- bound가 보장하는 `name`, `attack_power`, `is_alive` method를 Generic 함수 내부에서 호출했다.
+- `Combatant`를 구현하지 않은 `Item`을 전달해 발생한 `E0277`을 통해 bound가 호출 가능한 타입을 제한함을 확인했다.
+- `&T`로 Player와 Monster를 빌려 처리한 뒤 원본을 다시 사용했다.
+- 12-5 Trait Bound 학습을 시작했다.
 - `Combatant` Trait을 `Player`와 `Monster`에 각각 구현했다.
 - 두 타입이 자신의 field 구조를 사용해 동일한 method 계약을 충족하도록 작성했다.
 - inherent method와 Trait method의 이름이 겹칠 때 `Combatant::is_alive(&player)`로 Trait 구현을 명시적으로 호출했다.
