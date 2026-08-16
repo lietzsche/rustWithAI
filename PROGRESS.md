@@ -71,18 +71,24 @@
 - 12-1 Generic 함수
 - 12-2 Generic Struct
 - 12-3 Trait
+- 12-4 Trait 구현
 
 ## 현재 단계
 
-- 위치: 12-3 Trait
+- 위치: 12-4 Trait 구현
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- 12-4 Trait 구현
+- 12-5 Trait Bound
 
 ## 최근 작업
 
+- `Combatant` Trait을 `Player`와 `Monster`에 각각 구현했다.
+- 두 타입이 자신의 field 구조를 사용해 동일한 method 계약을 충족하도록 작성했다.
+- inherent method와 Trait method의 이름이 겹칠 때 `Combatant::is_alive(&player)`로 Trait 구현을 명시적으로 호출했다.
+- Trait method가 `&self`로 instance를 빌려 호출 후에도 원본을 계속 사용할 수 있음을 확인했다.
+- 12-4 Trait 구현 학습을 시작했다.
 - `Combatant` Trait에 이름, 공격력, 생존 여부를 제공하는 method 계약을 정의했다.
 - receiver가 호출 대상 instance를 받는 특별한 첫 번째 매개변수이며 Java의 명시되지 않는 `this`와 대응됨을 확인했다.
 - Trait 선언과 method 선언을 혼동해 발생한 parser 오류를 수정했다.
