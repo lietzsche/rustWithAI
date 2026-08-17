@@ -35,6 +35,14 @@ Network Lab의 1차 목적은 idiomatic Rust나 production-ready 서버가 아�
 - 비슷하다는 설명보다 ownership, scheduling, error 처리와 runtime 모델의 차이를 우선한다.
 - OS socket buffer, syscall, kernel 대기처럼 관찰 결과에 영향을 주는 하위 계층을 필요한 깊이까지 설명한다.
 
+## 코드 구성 원칙
+
+- `main.rs`는 실행 순서와 최상위 조립만 담당하고, 완료된 독립 학습 예제는 `n1_1.rs`, `n1_2.rs`처럼 단계별 module로 보관할 수 있다.
+- 단계별 module은 개념 관찰용 예제를 구분하기 위한 구조이며, 실제 Network Lab 구현의 영구적인 설계 단위로 사용하지 않는다.
+- TCP client/server와 재사용 로직이 성장하기 시작하면 단원 번호가 아니라 `buffer`, `codec`, `protocol`, `client`, `server`, `connection`처럼 책임과 역할을 기준으로 module을 나눈다.
+- 아직 역할이 드러나지 않은 코드를 미리 세분화하지 않는다. 현재 문제를 해결하면서 책임이 명확해지는 시점에 module을 추출한다.
+- 기존 단계별 예제를 보존할지 역할 module의 test로 옮길지는 전환 시점에 학습 가치와 중복을 기준으로 결정한다.
+
 ## 검증과 Git
 
 - 단계 시작과 완료 시 이 프로젝트의 `PROGRESS.md`를 갱신한다.

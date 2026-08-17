@@ -21,6 +21,8 @@
 
 ## 최근 작업
 
+- N1의 완료된 예제를 `n1_1`, `n1_2`, `n1_3` module로 분리하고 `main.rs`를 실행 조립 역할로 정리했다.
+- 개념 예제는 단계별로 보관하되 실제 구현은 `buffer`, `codec`, `client`, `server` 등 역할 중심 module로 전환하는 원칙을 문서화했다.
 - `Vec::with_capacity`와 append 전후의 length, capacity를 비교했다.
 - `extend_from_slice`로 byte sequence를 buffer 뒤에 추가하고 재할당을 관찰했다.
 - 별도 `read_position`과 `&[u8]` slice로 원본을 삭제하거나 복사하지 않고 논리적으로 소비했다.

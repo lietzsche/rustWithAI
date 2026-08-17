@@ -24,6 +24,23 @@ Rust 표준 라이브러리에서 시작해 네트워크 스택의 핵심 동작
 
 상세 순서는 [CURRICULUM.md](CURRICULUM.md), 현재 위치는 [PROGRESS.md](PROGRESS.md)를 따른다.
 
+## 코드 구성
+
+초기 개념 관찰 코드는 진도를 다시 확인할 수 있도록 `n1_1.rs`, `n1_2.rs` 같은 단계별 module로 분리하고 `main.rs`에서는 실행 순서만 조립한다.
+
+실제 네트워크 프로그램이 성장하면 학습 단계 번호를 설계 경계로 사용하지 않는다. 책임이 드러나는 시점에 다음과 같은 역할 중심 module로 전환한다.
+
+```text
+buffer.rs
+codec.rs
+protocol.rs
+client.rs
+server.rs
+connection.rs
+```
+
+필요해지기 전에 구조를 모두 만들지는 않으며, framing이나 client/server 분리처럼 실제 문제에서 책임이 생길 때 하나씩 추출한다.
+
 ## 명령
 
 저장소 루트에서 실행한다.
