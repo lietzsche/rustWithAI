@@ -5,20 +5,28 @@
 - 프로젝트 방향과 전체 커리큘럼 설계
 - N1-1 byte와 byte sequence
 - N1-2 정수와 byte order
+- N1-3 buffer에 쓰고 읽기
+- N1 Byte와 Buffer
 
 ## 현재 단계
 
-- 단계: N1-2 정수와 byte order
+- 단계: N1-3 buffer에 쓰고 읽기
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- N1-3 buffer에 쓰고 읽기
-- buffer의 length와 capacity 비교
-- slice와 consume 위치로 복사 없이 읽는 범위 관찰
+- N2-1 I/O와 blocking
+- `Read`, `Write`가 byte를 전달하는 방식 확인
+- EOF와 `read == 0`, 입력이 없을 때의 대기 관찰
 
 ## 최근 작업
 
+- `Vec::with_capacity`와 append 전후의 length, capacity를 비교했다.
+- `extend_from_slice`로 byte sequence를 buffer 뒤에 추가하고 재할당을 관찰했다.
+- 별도 `read_position`과 `&[u8]` slice로 원본을 삭제하거나 복사하지 않고 논리적으로 소비했다.
+- `[u8]`는 unsized slice 본체이고 `&[u8]`는 주소와 길이를 가진 고정 크기 reference임을 확인했다.
+- raw byte와 UTF-8 text 해석을 분리하고 `from_utf8`의 `Result`를 확인했다.
+- 문자열과 정수를 byte로 변환하고 원래 값으로 복원해 N1 종료 조건을 충족했다.
 - `u32`를 big-endian과 little-endian의 `[u8; 4]`로 변환했다.
 - 각 byte 배열을 올바른 byte order로 복원해 원래 정수와 일치함을 확인했다.
 - big-endian 배열을 little-endian으로 잘못 해석해 값이 달라지는 현상을 확인했다.
