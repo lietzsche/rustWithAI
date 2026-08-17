@@ -10,11 +10,11 @@
 
 - 프로젝트: Network Lab
 - 단계: N1-1 byte와 byte buffer
-- 상태: 시작 준비
+- 상태: 완료
 
 ## 다음
 
-- `u8`, byte sequence와 text encoding의 차이를 확인한다.
-- 작은 byte buffer를 직접 만들고 내용을 관찰한다.
+- N1-2 정수와 byte order
+- `to_be_bytes`, `from_be_bytes`로 정수의 byte 표현을 확인한다.
 
 세부 진도는 [projects/network-lab/PROGRESS.md](projects/network-lab/PROGRESS.md)를 따른다.
