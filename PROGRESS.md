@@ -9,12 +9,12 @@
 ## 현재
 
 - 프로젝트: Network Lab
-- 단계: N1-1 byte와 byte buffer
+- 단계: N1-2 정수와 byte order
 - 상태: 완료
 
 ## 다음
 
-- N1-2 정수와 byte order
-- `to_be_bytes`, `from_be_bytes`로 정수의 byte 표현을 확인한다.
+- N1-3 buffer에 쓰고 읽기
+- buffer의 length, capacity와 consume 위치를 다룬다.
 
 세부 진도는 [projects/network-lab/PROGRESS.md](projects/network-lab/PROGRESS.md)를 따른다.
