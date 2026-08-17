@@ -38,6 +38,9 @@ Network Lab의 1차 목적은 idiomatic Rust나 production-ready 서버가 아�
 ## 코드 구성 원칙
 
 - `main.rs`는 실행 순서와 최상위 조립만 담당하고, 완료된 독립 학습 예제는 `n1_1.rs`, `n1_2.rs`처럼 단계별 module로 보관할 수 있다.
+- 과제를 제시할 때 학습자가 작성할 대상 파일과 module 연결 위치를 함께 명시한다. 독립적인 개념 실습은 처음부터 해당 단계 module에 작성하도록 유도하고, `main.rs`에는 `mod` 선언과 실행 호출만 추가하게 한다.
+- 이미 역할 중심 module이 생긴 영역의 과제는 새 단계 module을 계속 만들지 않고 해당 `buffer`, `codec`, `client`, `server` 등의 module에 기능을 추가하도록 안내한다.
+- module 선언, `pub` 공개 범위, `use`와 경로 선택도 학습자가 직접 작성하고 오류를 경험하도록 과제 범위에 포함한다. 단, 모듈화 자체가 현재 핵심 개념을 가릴 정도라면 필요한 최소 boilerplate만 제공할 수 있다.
 - 단계별 module은 개념 관찰용 예제를 구분하기 위한 구조이며, 실제 Network Lab 구현의 영구적인 설계 단위로 사용하지 않는다.
 - TCP client/server와 재사용 로직이 성장하기 시작하면 단원 번호가 아니라 `buffer`, `codec`, `protocol`, `client`, `server`, `connection`처럼 책임과 역할을 기준으로 module을 나눈다.
 - 아직 역할이 드러나지 않은 코드를 미리 세분화하지 않는다. 현재 문제를 해결하면서 책임이 명확해지는 시점에 module을 추출한다.

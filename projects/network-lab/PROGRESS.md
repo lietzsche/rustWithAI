@@ -21,6 +21,7 @@
 
 ## 최근 작업
 
+- 앞으로의 과제에서 작성 대상 module과 `main.rs` 연결을 명시하고 학습자가 직접 모듈화하도록 하는 진행 원칙을 추가했다.
 - N1의 완료된 예제를 `n1_1`, `n1_2`, `n1_3` module로 분리하고 `main.rs`를 실행 조립 역할로 정리했다.
 - 개념 예제는 단계별로 보관하되 실제 구현은 `buffer`, `codec`, `client`, `server` 등 역할 중심 module로 전환하는 원칙을 문서화했다.
 - `Vec::with_capacity`와 append 전후의 length, capacity를 비교했다.
