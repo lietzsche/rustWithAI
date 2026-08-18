@@ -7,20 +7,28 @@
 - N1-2 정수와 byte order
 - N1-3 buffer에 쓰고 읽기
 - N1 Byte와 Buffer
+- N2-1 I/O와 blocking
 
 ## 현재 단계
 
-- 단계: N1-3 buffer에 쓰고 읽기
+- 단계: N2-1 I/O와 blocking
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- N2-1 I/O와 blocking
-- `Read`, `Write`가 byte를 전달하는 방식 확인
-- EOF와 `read == 0`, 입력이 없을 때의 대기 관찰
+- N2-2 socket, IP, port
+- `TcpListener`, `TcpStream`과 bind, accept, connect의 역할 확인
+- loopback에서 단일 client 연결
 
 ## 최근 작업
 
+- `Vec<u8>`에 `Write::write_all`로 전체 byte sequence를 기록했다.
+- `Cursor<Vec<u8>>`를 작은 buffer로 반복해서 읽어 `Read::read`의 실제 반환 길이를 확인했다.
+- non-empty buffer의 `read == 0`을 EOF로 판단하고 반복을 종료했다.
+- terminal 입력 전에는 `read`가 대기하고 입력 후 반환되는 blocking 동작을 관찰했다.
+- 빈 입력에서 `Ctrl+D`로 EOF를 전달해 표준 입력의 `read == 0`을 확인했다.
+- interactive 실험을 `blocking_stdin_demo`로 분리하고 `--stdin-demo`에서만 실행되도록 정리했다.
+- `.read()` method syntax가 `Read` trait의 `read` 호출임을 확인했다.
 - 앞으로의 과제에서 작성 대상 module과 `main.rs` 연결을 명시하고 학습자가 직접 모듈화하도록 하는 진행 원칙을 추가했다.
 - N1의 완료된 예제를 `n1_1`, `n1_2`, `n1_3` module로 분리하고 `main.rs`를 실행 조립 역할로 정리했다.
 - 개념 예제는 단계별로 보관하되 실제 구현은 `buffer`, `codec`, `client`, `server` 등 역할 중심 module로 전환하는 원칙을 문서화했다.
