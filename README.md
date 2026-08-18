@@ -43,3 +43,58 @@ cargo clippy --workspace --all-targets -- -D warnings
 cd archive/rust-basics
 cargo test --workspace
 ```
+
+## Linux/WSL Vim Rust 환경
+
+저장소 루트의 [`setup-rust-vim.sh`](setup-rust-vim.sh)는 기존 `~/.vimrc`를 덮어쓰지 않고 Vim native package 경로에 Rust 개발 환경을 설치한다.
+
+설치 구성:
+
+- `rust.vim`: Rust filetype, syntax, `rustfmt` 연동
+- `vim-lsp`: Vim의 LSP client
+- `rust-analyzer`: Rust language server
+- `asyncomplete.vim`, `asyncomplete-lsp.vim`: LSP 자동완성 popup
+- `rust-src`, `rustfmt`: 표준 라이브러리 분석과 formatting 지원
+
+사전 요구사항은 `vim`, `git`, `rustup`이다. Ubuntu/Debian에서 앞의 두 명령이 없다면 먼저 설치한다.
+
+```bash
+sudo apt install vim git
+```
+
+변경될 내용을 먼저 확인하고 설치한다.
+
+```bash
+./setup-rust-vim.sh --dry-run
+./setup-rust-vim.sh
+```
+
+스크립트는 다음 위치만 관리한다.
+
+```text
+~/.vim/pack/rust-with-ai/start/
+~/.vim/plugin/rust-with-ai-lsp.vim
+```
+
+기존 plugin checkout은 `git pull --ff-only`로 갱신한다. 같은 경로에 스크립트가 관리하지 않는 파일이 있으면 덮어쓰지 않고 중단한다.
+
+Cargo project를 Vim으로 연 뒤 rust-analyzer가 시작될 시간을 잠시 기다리고 다음 명령으로 상태를 확인한다.
+
+```vim
+:LspStatus
+```
+
+기본 조작:
+
+```text
+gd           정의로 이동
+gr           참조 검색
+gi           구현으로 이동
+gt           타입 정의로 이동
+K            hover 정보
+<leader>rn   이름 변경
+[g / ]g      이전/다음 진단
+Ctrl-X Ctrl-O 수동 completion
+```
+
+자동 completion popup은 `asyncomplete` 연동으로 제공한다. 설치 후 문제가 있으면 shell에서 `rust-analyzer --version`, Vim에서 `:LspStatus` 순서로 확인한다.
