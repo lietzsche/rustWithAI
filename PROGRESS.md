@@ -9,12 +9,12 @@
 ## 현재
 
 - 프로젝트: Network Lab
-- 단계: N2-2 socket, IP, port
+- 단계: N2-3 첫 byte 왕복
 - 상태: 완료
 
 ## 다음
 
-- N2-3 첫 byte 왕복
-- client가 보낸 byte를 server가 읽어 반환한다.
+- N3-1 메시지 경계가 없는 stream
+- 여러 번의 `write`와 `read` 결과를 비교한다.
 
 세부 진도는 [projects/network-lab/PROGRESS.md](projects/network-lab/PROGRESS.md)를 따른다.

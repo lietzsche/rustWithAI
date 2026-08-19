@@ -9,20 +9,27 @@
 - N1 Byte와 Buffer
 - N2-1 I/O와 blocking
 - N2-2 socket, IP, port
+- N2-3 첫 byte 왕복
+- N2 Blocking I/O와 TCP 연결
 
 ## 현재 단계
 
-- 단계: N2-2 socket, IP, port
+- 단계: N2-3 첫 byte 왕복
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- N2-3 첫 byte 왕복
-- client가 보낸 byte를 server가 읽어 반환한다.
-- connection 종료와 read/write 오류 전파를 관찰한다.
+- N3-1 메시지 경계가 없는 stream
+- 여러 번의 `write`와 `read` 결과를 비교한다.
+- packet과 application message를 동일시하면 안 되는 이유를 관찰한다.
 
 ## 최근 작업
 
+- client가 보낸 `b"X"`를 server가 읽어 같은 byte로 반환하고 양쪽에서 `[88]`을 확인했다.
+- buffer 전체가 아니라 `read_count`까지의 유효한 slice만 처리하고 반환했다.
+- client의 `Shutdown::Both` 후 server의 두 번째 `read`가 `Ok(0)`을 반환하는 정상 EOF를 확인했다.
+- 종료된 stream에 대한 write가 `BrokenPipe` 오류로 전달되는 것을 관찰한 뒤 의도적 오류 코드를 제거했다.
+- `accept`는 연결 요청을, `read`는 byte·EOF·오류를 기다린다는 blocking 조건을 구분했다.
 - `TcpListener`를 `127.0.0.1:7878`에 bind하고 client가 없을 때 `accept`가 blocking되는 것을 확인했다.
 - `TcpStream::connect`로 loopback server에 연결해 `accept`가 반환되는 것을 확인했다.
 - server와 client의 `local_addr`, `peer_addr`를 비교해 양쪽 endpoint가 서로 반대로 대응함을 확인했다.
