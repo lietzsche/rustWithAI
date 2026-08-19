@@ -24,6 +24,8 @@ Network Lab의 1차 목적은 idiomatic Rust나 production-ready 서버가 아�
 - byte, buffer, blocking I/O와 TCP stream부터 시작한다.
 - framing, concurrency, shared state, async는 앞 단계에서 필요성이 드러난 뒤 도입한다.
 - 표준 라이브러리를 우선한다.
+- 모든 구현 과제 전에는 처음 사용하는 Rust 문법과 표준 라이브러리 API의 기본 형태를 작은 독립 예제로 먼저 보여준다.
+- 문법 예시는 과제의 완성 답안을 그대로 제공하지 않고, 학습자가 핵심 구현에 적용할 최소 형태만 다룬다.
 - 핵심 codec, connection 처리, concurrency 코드는 학습자가 직접 작성한다.
 - 정답 코드를 먼저 보여주지 않는다. 첫 번째에는 방향 힌트, 두 번째에는 구체적인 힌트, 요청 시 완성 코드와 해설을 제공한다.
 - 의도적 문제 실험은 관찰한 뒤 정상 상태로 정리한다.
