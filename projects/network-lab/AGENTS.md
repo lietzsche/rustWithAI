@@ -20,6 +20,7 @@ Network Lab의 1차 목적은 idiomatic Rust나 production-ready 서버가 아�
 
 ## 진행 원칙
 
+- 소단원을 완료하면 해당 단계의 완료 상태에서 대기한다. 사용자가 명시적으로 `넘어가자`고 요청하기 전에는 다음 단원을 시작하거나 진도를 `진행 중`으로 변경하지 않는다.
 - 처음부터 async, Tokio, HTTP framework를 사용하지 않는다.
 - byte, buffer, blocking I/O와 TCP stream부터 시작한다.
 - framing, concurrency, shared state, async는 앞 단계에서 필요성이 드러난 뒤 도입한다.
