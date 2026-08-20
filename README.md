@@ -12,6 +12,36 @@ Rust를 도구로 사용해 네트워크, 운영체제, 메모리, 동시성, �
 
 [projects/network-lab](projects/network-lab/README.md)에서 현재 학습을 이어간다. byte와 blocking I/O부터 시작해 TCP stream의 문제를 경험하고 framing, 동시성, non-blocking I/O, async/Tokio로 확장한다.
 
+## 전체 프로젝트 흐름
+
+세부 커리큘럼은 각 프로젝트를 시작할 때 직전 프로젝트에서 생긴 질문을 반영해 확정한다. 큰 학습 순서와 결과물의 연결은 다음과 같다.
+
+```text
+Rust Basics
+    ↓
+Network Lab             TCP in-memory Key-Value server
+    ↓
+OS Foundations Lab      syscall, process, memory와 I/O 기반
+    ↓
+Storage Engine Lab      persistent Key-Value storage
+    ↓
+Database Lab            index와 transaction을 가진 database
+    ↓
+Distributed Systems Lab 복제되는 distributed Key-Value system
+    ↓
+선택 심화                runtime, compiler, performance, ML/LLM systems
+```
+
+프로젝트를 마치면 자동으로 다음 프로젝트를 시작하지 않는다. 완료 상태에서 대기한 뒤 학습자가 진행을 요청하면 이전 결과물과 남은 질문을 출발점으로 다음 프로젝트의 상세 문서를 만든다.
+
+모든 시스템 프로젝트에서는 다음 질문을 반복한다.
+
+- 데이터는 지금 어디에 있는가?
+- 상태는 누가 소유하고 변경하는가?
+- 작업은 어떤 thread, process, runtime 또는 OS가 실행하거나 기다리는가?
+
+상위 abstraction은 하위 mechanism의 실패와 한계를 관찰한 뒤 도입하며, 필요한 경우 OS 도구로 코드 밖의 동작도 확인한다.
+
 ## 저장소 구조
 
 ```text
