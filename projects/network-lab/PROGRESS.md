@@ -11,20 +11,26 @@
 - N2-2 socket, IP, port
 - N2-3 첫 byte 왕복
 - N2 Blocking I/O와 TCP 연결
+- N3-1 메시지 경계가 없는 stream
 
 ## 현재 단계
 
-- 단계: N2-3 첫 byte 왕복
+- 단계: N3-1 메시지 경계가 없는 stream
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- N3-1 메시지 경계가 없는 stream
-- 여러 번의 `write`와 `read` 결과를 비교한다.
-- packet과 application message를 동일시하면 안 되는 이유를 관찰한다.
+- N3-2 partial read와 partial write
+- 읽고 쓴 byte 수를 반드시 확인해야 하는 이유를 학습한다.
+- `read_exact`, `write_all`의 보장 범위를 비교한다.
 
 ## 최근 작업
 
+- client가 `PING`, `PONG`을 두 번 write하고 server가 크기 3인 buffer로 네 번 read해 write 경계가 보존되지 않는 것을 확인했다.
+- server의 read buffer를 8로 늘리고 읽기 전 잠시 대기해 두 write가 한 번의 read에서 `PINGPONG`으로 합쳐지는 것을 재현했다.
+- 실험용 sleep을 제거하고 EOF까지 반복해서 읽는 정상 상태로 정리했다.
+- read buffer 크기는 한 번에 읽을 최대 크기이며 buffer를 모두 채운다는 보장이 아님을 확인했다.
+- application write 경계, TCP segment 경계, application read 경계가 서로 일치하지 않음을 설명했다.
 - client가 보낸 `b"X"`를 server가 읽어 같은 byte로 반환하고 양쪽에서 `[88]`을 확인했다.
 - buffer 전체가 아니라 `read_count`까지의 유효한 slice만 처리하고 반환했다.
 - client의 `Shutdown::Both` 후 server의 두 번째 `read`가 `Ok(0)`을 반환하는 정상 EOF를 확인했다.

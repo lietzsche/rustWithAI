@@ -3,6 +3,7 @@ mod n1_2;
 mod n1_3;
 mod n2_1;
 mod n2_2;
+mod n3_1;
 
 fn main() {
     println!("network lab");
@@ -22,4 +23,14 @@ fn main() {
     if std::env::args().any(|arg| arg == "--tcp-client") {
         n2_2::tcp_client_demo();
     }
+    if has_arg("--stream-server") {
+        n3_1::tcp_server_demo();
+    }
+    if has_arg("--stream-client") {
+        n3_1::tcp_client_demo();
+    }
+}
+
+fn has_arg(expected: &str) -> bool {
+    std::env::args().any(|args| args == expected)
 }
