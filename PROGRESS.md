@@ -9,12 +9,12 @@
 ## 현재
 
 - 프로젝트: Network Lab
-- 단계: N3-1 메시지 경계가 없는 stream
+- 단계: N3-2 partial read와 partial write
 - 상태: 완료
 
 ## 다음
 
-- N3-2 partial read와 partial write
-- 읽고 쓴 byte 수를 반드시 확인해야 하는 이유를 학습한다.
+- N3-3 연결 종료와 오류 상황
+- 정상 EOF, client 중도 종료, timeout과 OS 오류를 관찰한다.
 
 세부 진도는 [projects/network-lab/PROGRESS.md](projects/network-lab/PROGRESS.md)를 따른다.

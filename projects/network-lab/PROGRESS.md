@@ -12,20 +12,27 @@
 - N2-3 첫 byte 왕복
 - N2 Blocking I/O와 TCP 연결
 - N3-1 메시지 경계가 없는 stream
+- N3-2 partial read와 partial write
 
 ## 현재 단계
 
-- 단계: N3-1 메시지 경계가 없는 stream
+- 단계: N3-2 partial read와 partial write
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- N3-2 partial read와 partial write
-- 읽고 쓴 byte 수를 반드시 확인해야 하는 이유를 학습한다.
-- `read_exact`, `write_all`의 보장 범위를 비교한다.
+- N3-3 연결 종료와 오류 상황
+- 정상 EOF, client 중도 종료와 timeout을 관찰한다.
+- `ConnectionReset`, `BrokenPipe` 등 OS 오류를 연결 상태와 함께 분석한다.
 
 ## 최근 작업
 
+- 고정 크기 destination slice에 `write`를 호출해 5 byte 중 3 byte만 처리되는 partial write를 재현했다.
+- 같은 destination에 `write_all`을 호출해 일부 기록 후 `WriteZero`가 반환되고 rollback되지 않는 것을 확인했다.
+- byte slice에서 `read`가 실제 개수를 반환하고 reader가 읽지 않은 나머지 범위를 가리키도록 이동하는 것을 확인했다.
+- `read_exact`이 buffer를 모두 채우거나 `UnexpectedEof`를 반환하며, 실패 시 buffer를 완성된 결과로 사용할 수 없음을 확인했다.
+- TCP client의 두 `write_all`을 server의 `read_exact(8)`이 `PINGPONG` 하나로 채워 write 경계를 보존하지 않음을 확인했다.
+- `write_all` 성공은 local kernel socket의 byte 수락을 보장하지만 peer의 수신이나 처리를 보장하지 않음을 설명했다.
 - client가 `PING`, `PONG`을 두 번 write하고 server가 크기 3인 buffer로 네 번 read해 write 경계가 보존되지 않는 것을 확인했다.
 - server의 read buffer를 8로 늘리고 읽기 전 잠시 대기해 두 write가 한 번의 read에서 `PINGPONG`으로 합쳐지는 것을 재현했다.
 - 실험용 sleep을 제거하고 EOF까지 반복해서 읽는 정상 상태로 정리했다.

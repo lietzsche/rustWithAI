@@ -4,6 +4,7 @@ mod n1_3;
 mod n2_1;
 mod n2_2;
 mod n3_1;
+mod n3_2;
 
 fn main() {
     println!("network lab");
@@ -28,6 +29,21 @@ fn main() {
     }
     if has_arg("--stream-client") {
         n3_1::tcp_client_demo();
+    }
+    if has_arg("--partial-write") {
+        n3_2::partial_write_demo();
+    }
+    if has_arg("--partial-read") {
+        n3_2::partial_read_demo();
+    }
+    if has_arg("--read-exact") {
+        n3_2::read_exact_demo();
+    }
+    if has_arg("--exact-server") {
+        n3_2::exact_server_demo();
+    }
+    if has_arg("--exact-client") {
+        n3_2::exact_client_demo();
     }
 }
 
