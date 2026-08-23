@@ -13,20 +13,27 @@
 - N2 Blocking I/O와 TCP 연결
 - N3-1 메시지 경계가 없는 stream
 - N3-2 partial read와 partial write
+- N3-3 연결 종료와 오류 상황
+- N3 TCP Stream의 성질
 
 ## 현재 단계
 
-- 단계: N3-2 partial read와 partial write
+- 단계: N3-3 연결 종료와 오류 상황
 - 상태: 과제 작성 및 피드백 완료
 
 ## 다음 단계
 
-- N3-3 연결 종료와 오류 상황
-- 정상 EOF, client 중도 종료와 timeout을 관찰한다.
-- `ConnectionReset`, `BrokenPipe` 등 OS 오류를 연결 상태와 함께 분석한다.
+- N4-1 framing이 필요한 이유
+- delimiter, fixed-length, length-prefix 방식을 비교한다.
+- 이 프로젝트에서 length-prefix를 선택하는 이유를 정리한다.
 
 ## 최근 작업
 
+- client가 4 byte만 보낸 뒤 쓰기 방향을 종료해 server의 `read_exact(8)`에서 `UnexpectedEof`를 재현했다.
+- listener가 없는 port에 연결해 `ConnectionRefused`를 관찰하고 연결 성립 전 오류임을 확인했다.
+- accepted stream에 1초 read timeout을 설정하고 silent client가 연결을 유지할 때 Linux에서 `WouldBlock`을 관찰했다.
+- `Ok(n)`, `Ok(0)`, timeout 오류와 기타 I/O 오류를 match에서 분리했다.
+- 정상 EOF, incomplete application input, timeout과 종료된 방향의 `BrokenPipe`를 연결 상태에 따라 구분했다.
 - 고정 크기 destination slice에 `write`를 호출해 5 byte 중 3 byte만 처리되는 partial write를 재현했다.
 - 같은 destination에 `write_all`을 호출해 일부 기록 후 `WriteZero`가 반환되고 rollback되지 않는 것을 확인했다.
 - byte slice에서 `read`가 실제 개수를 반환하고 reader가 읽지 않은 나머지 범위를 가리키도록 이동하는 것을 확인했다.

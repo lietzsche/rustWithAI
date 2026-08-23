@@ -5,6 +5,7 @@ mod n2_1;
 mod n2_2;
 mod n3_1;
 mod n3_2;
+mod n3_3;
 
 fn main() {
     println!("network lab");
@@ -44,6 +45,18 @@ fn main() {
     }
     if has_arg("--exact-client") {
         n3_2::exact_client_demo();
+    }
+    if has_arg("--early-close-server") {
+        n3_3::early_close_server_demo();
+    }
+    if has_arg("--early-close-client") {
+        n3_3::early_close_client_demo();
+    }
+    if has_arg("--timeout-server") {
+        n3_3::timeout_server_demo();
+    }
+    if has_arg("--silent-client") {
+        n3_3::silent_client_demo();
     }
 }
 
