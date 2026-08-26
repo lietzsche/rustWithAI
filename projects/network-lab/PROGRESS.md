@@ -15,20 +15,26 @@
 - N3-2 partial read와 partial write
 - N3-3 연결 종료와 오류 상황
 - N3 TCP Stream의 성질
+- N4-1 framing이 필요한 이유
 
 ## 현재 단계
 
-- 단계: N3-3 연결 종료와 오류 상황
-- 상태: 과제 작성 및 피드백 완료
+- 단계: N4-1 framing이 필요한 이유
+- 상태: 개념 비교 및 피드백 완료
 
 ## 다음 단계
 
-- N4-1 framing이 필요한 이유
-- delimiter, fixed-length, length-prefix 방식을 비교한다.
-- 이 프로젝트에서 length-prefix를 선택하는 이유를 정리한다.
+- N4-2 frame encoding
+- header에 payload 길이를 기록하고 payload와 결합한다.
+- buffer 할당 전에 최대 frame 크기를 검증한다.
 
 ## 최근 작업
 
+- TCP byte stream에는 application message 경계가 없으므로 application protocol이 framing 규칙을 정의해야 함을 확인했다.
+- delimiter 방식에는 payload 내부 delimiter를 구별하는 escaping, encoding 또는 금지 규칙이 필요함을 정리했다.
+- fixed-length 방식에는 짧은 메시지의 padding과 긴 메시지의 분할·재조립 또는 거부 규칙이 필요함을 정리했다.
+- variable-length의 임의 byte payload를 다룰 수 있도록 이 프로젝트에서는 length-prefix framing을 선택했다.
+- 길이 header를 읽은 직후 최대 frame 크기를 검증하고, 초과하면 payload buffer를 할당하거나 읽기 전에 거부해야 함을 확인했다.
 - client가 4 byte만 보낸 뒤 쓰기 방향을 종료해 server의 `read_exact(8)`에서 `UnexpectedEof`를 재현했다.
 - listener가 없는 port에 연결해 `ConnectionRefused`를 관찰하고 연결 성립 전 오류임을 확인했다.
 - accepted stream에 1초 read timeout을 설정하고 silent client가 연결을 유지할 때 Linux에서 `WouldBlock`을 관찰했다.
